@@ -1,0 +1,50 @@
+﻿@page
+@model TecualaBaby.Pages.MomentoMetodologia.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>MomentosMetodologias</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MomentosMetodologias.idMetodología" />
+            <div class="form-group">
+                <label asp-for="MomentosMetodologias.idPlantilla" class="control-label"></label>
+                <input asp-for="MomentosMetodologias.idPlantilla" class="form-control" />
+                <span asp-validation-for="MomentosMetodologias.idPlantilla" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MomentosMetodologias.descripcion" class="control-label"></label>
+                <input asp-for="MomentosMetodologias.descripcion" class="form-control" />
+                <span asp-validation-for="MomentosMetodologias.descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MomentosMetodologias.objetivo" class="control-label"></label>
+                <input asp-for="MomentosMetodologias.objetivo" class="form-control" />
+                <span asp-validation-for="MomentosMetodologias.objetivo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MomentosMetodologias.secuencia" class="control-label"></label>
+                <input asp-for="MomentosMetodologias.secuencia" class="form-control" />
+                <span asp-validation-for="MomentosMetodologias.secuencia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

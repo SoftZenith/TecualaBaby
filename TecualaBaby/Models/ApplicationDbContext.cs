@@ -18,5 +18,6 @@ namespace TecualaBaby.Models
         public DbSet<Metodologia> Metodologias { get; set; }
         public DbSet<PlantillaMetodologia> PlantillaMetodologias { set; get; }
         public DbSet<TecualaBaby.Models.CompetenciaPotencia> CompetenciaPotenciaEstatus { get; set; }
+        public DbSet<TecualaBaby.Models.MomentosMetodologias> MomentosMetodologias { get; set; }
     }
 }

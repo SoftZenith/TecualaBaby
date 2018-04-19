@@ -1,0 +1,54 @@
+﻿@page
+@model TecualaBaby.Pages.MomentoMetodologia.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MomentosMetodologias[0].idPlantilla)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MomentosMetodologias[0].descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MomentosMetodologias[0].objetivo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MomentosMetodologias[0].secuencia)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.MomentosMetodologias) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idPlantilla)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.objetivo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.secuencia)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.idMetodología">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.idMetodología">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.idMetodología">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
