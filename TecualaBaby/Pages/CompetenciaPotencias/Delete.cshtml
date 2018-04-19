@@ -1,0 +1,64 @@
+﻿@page
+@model TecualaBaby.Pages.CompetenciaPotencias.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CompetenciaPotencia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CompetenciaPotencia.competencia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompetenciaPotencia.competencia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompetenciaPotencia.idEstatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompetenciaPotencia.idEstatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompetenciaPotencia.idTipoEstatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompetenciaPotencia.idTipoEstatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompetenciaPotencia.fechaEstatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompetenciaPotencia.fechaEstatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompetenciaPotencia.actual)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompetenciaPotencia.actual)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompetenciaPotencia.observacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompetenciaPotencia.observacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompetenciaPotencia.idUsuarioReg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompetenciaPotencia.idUsuarioReg)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="CompetenciaPotencia.persona" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

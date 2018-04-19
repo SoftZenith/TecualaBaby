@@ -1,0 +1,61 @@
+﻿@page
+@model TecualaBaby.Pages.CompetenciaPotencias.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CompetenciaPotencia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CompetenciaPotencia.competencia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompetenciaPotencia.competencia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompetenciaPotencia.idEstatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompetenciaPotencia.idEstatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompetenciaPotencia.idTipoEstatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompetenciaPotencia.idTipoEstatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompetenciaPotencia.fechaEstatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompetenciaPotencia.fechaEstatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompetenciaPotencia.actual)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompetenciaPotencia.actual)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompetenciaPotencia.observacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompetenciaPotencia.observacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CompetenciaPotencia.idUsuarioReg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CompetenciaPotencia.idUsuarioReg)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.CompetenciaPotencia.persona">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
