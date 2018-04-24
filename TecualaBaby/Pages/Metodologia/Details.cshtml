@@ -1,0 +1,37 @@
+﻿@page
+@model TecualaBaby.Pages.Metodologia.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Metodologia</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Metodologia.clave)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Metodologia.clave)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Metodologia.descripcion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Metodologia.descripcion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Metodologia.explicacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Metodologia.explicacion)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Metodologia.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -7,7 +7,7 @@ namespace TecualaBaby.Models
 {
     public class Metodologia
     {
-        //El ID no es necesario ??
+       
         public int Id { get; set; }
         public int clave { get; set; }
         public string descripcion { get; set; }

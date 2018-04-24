@@ -33,15 +33,74 @@
                     <li><a asp-page="/Index">Home</a></li>
                     <li><a asp-page="/About">About</a></li>
                     <li><a asp-page="/Contact">Contact</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Metodologia
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-page="/Metodologia/Index">Metodologia</a></li>
+                            <li><a asp-page="/PlantillaMetodologia/Index">Plantilla Metodologia</a></li>
+                            <li><a asp-page="/MomentoMetodologia/Index">Momento Metodologia</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Competencia
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-page="/CompetenciaPotencias/Index">Competencias Potencias</a></li>
+                        </ul>
+                    </li>
                 </ul>
-            </div>
+          <!--      <ul class="nav navbar-nav navbar-right">
+                    <li><p class="navbar-text">Inicia Sesion</p></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        Login via
+                                        <div class="social-buttons">
+                                            <a href="#" class="btn btn-social btn-fb"> Facebook</a>
+                                        </div>
+                                        or
+                                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                            <div class="form-group">
+                                                <label class="sr-only" for="exampleInputEmail2">Correo Electronico</label>
+                                                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Correo Electronico" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="exampleInputPassword2">Contraseña</label>
+                                                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Contraseña" required>
+                                                <div class="help-block text-right"><a href="">Olvidaste tu contraseña</a></div>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary btn-block">Iniciar sesion</button>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox"> Mantenerme logeado
+                                                </label>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="bottom text-center">
+                                        ¿Eres nuevo? <a href="#"><b>Unete</b></a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+            </div>-->
         </div>
     </nav>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2017 - TecualaBaby</p>
+            <p>&copy; 2018 - TecualaBaby</p>
         </footer>
     </div>
 
