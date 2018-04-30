@@ -30,9 +30,17 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-page="/Index">Home</a></li>
-                    <li><a asp-page="/About">About</a></li>
-                    <li><a asp-page="/Contact">Contact</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            General
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-page="/Index">Home</a></li>
+                            <li><a asp-page="/About">About</a></li>
+                            <li><a asp-page="/Contact">Contact</a></li>
+                        </ul>
+                    </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             Metodologia
@@ -54,19 +62,20 @@
                         </ul>
                     </li>
                 </ul>
-          <!--      <ul class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav navbar-right">
                     <li><p class="navbar-text">Inicia Sesion</p></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
-                        <ul id="login-dp" class="dropdown-menu">
+                        <ul id="login-dp" class="dropdown-menu" >
                             <li>
                                 <div class="row">
                                     <div class="col-md-12">
                                         Login via
                                         <div class="social-buttons">
-                                            <a href="#" class="btn btn-social btn-fb"> Facebook</a>
+                                            <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                                            <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
                                         </div>
-                                        or
+                                        o 
                                         <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
                                             <div class="form-group">
                                                 <label class="sr-only" for="exampleInputEmail2">Correo Electronico</label>
@@ -93,7 +102,7 @@
                                 </div>
                             </li>
                         </ul>
-            </div>-->
+            </div>
         </div>
     </nav>
     <div class="container body-content">
