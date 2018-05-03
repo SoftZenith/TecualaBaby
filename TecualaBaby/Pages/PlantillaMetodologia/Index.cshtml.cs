@@ -22,7 +22,8 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
 
         public async Task OnGetAsync()
         {
-            PlantillaMetodologia = await _context.PlantillaMetodologias.ToListAsync();
+            PlantillaMetodologia = await _context.PlantillaMetodologias
+                .Include(p => p.Metodologia).ToListAsync();
         }
     }
 }

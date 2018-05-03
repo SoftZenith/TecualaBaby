@@ -28,7 +28,8 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
                 return NotFound();
             }
 
-            PlantillaMetodologia = await _context.PlantillaMetodologias.SingleOrDefaultAsync(m => m.Id == id);
+            PlantillaMetodologia = await _context.PlantillaMetodologias
+                .Include(p => p.Metodologia).SingleOrDefaultAsync(m => m.Id == id);
 
             if (PlantillaMetodologia == null)
             {

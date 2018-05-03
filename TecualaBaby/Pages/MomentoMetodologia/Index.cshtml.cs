@@ -18,11 +18,13 @@ namespace TecualaBaby.Pages.MomentoMetodologia
             _context = context;
         }
 
-        public IList<MomentosMetodologias> MomentosMetodologias { get;set; }
+        public IList<MomentosMetodologia> MomentosMetodologia { get;set; }
 
         public async Task OnGetAsync()
         {
-            MomentosMetodologias = await _context.MomentosMetodologias.ToListAsync();
+            MomentosMetodologia = await _context.MomentosMetodologia
+                .Include(m => m.Metodologia)
+                .Include(m => m.PlantillaMetodologia).ToListAsync();
         }
     }
 }

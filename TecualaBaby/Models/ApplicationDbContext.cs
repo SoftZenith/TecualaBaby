@@ -17,7 +17,30 @@ namespace TecualaBaby.Models
 
         public DbSet<Metodologia> Metodologias { get; set; }
         public DbSet<PlantillaMetodologia> PlantillaMetodologias { set; get; }
-        public DbSet<TecualaBaby.Models.CompetenciaPotencia> CompetenciaPotenciaEstatus { get; set; }
-        public DbSet<TecualaBaby.Models.MomentosMetodologias> MomentosMetodologias { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<PlantillaMetodologia>()
+                .HasOne(e => e.Metodologia)
+                .WithMany(b => b.PlantillaMetodologias)
+                .HasForeignKey(p => p.MetodologiaId)
+                .HasConstraintName("ForeignKey_PlantillaMetodologia_Metodologia");
+
+            modelBuilder.Entity<MomentosMetodologia>()
+                .HasOne(e => e.Metodologia)
+                .WithMany(b => b.MomentosMetodologias)
+                .HasForeignKey(p => p.MetodologiaId)
+                .HasConstraintName("ForeignKey_MomentosMetodologia_Metodologia");
+
+            modelBuilder.Entity<MomentosMetodologia>()
+                .HasOne(e => e.PlantillaMetodologia)
+                .WithMany(b => b.MomentosMetodologias)
+                .HasForeignKey(p => p.PlantillaMetodologiaId)
+                .HasConstraintName("ForeignKey_MomentosMetodologia_PlantillaMetodologia");
+
+        }
+
+        public DbSet<TecualaBaby.Models.MomentosMetodologia> MomentosMetodologia { get; set; }
+    
     }
 }

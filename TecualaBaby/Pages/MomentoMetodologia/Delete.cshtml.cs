@@ -19,7 +19,7 @@ namespace TecualaBaby.Pages.MomentoMetodologia
         }
 
         [BindProperty]
-        public MomentosMetodologias MomentosMetodologias { get; set; }
+        public MomentosMetodologia MomentosMetodologia { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,9 +28,11 @@ namespace TecualaBaby.Pages.MomentoMetodologia
                 return NotFound();
             }
 
-            MomentosMetodologias = await _context.MomentosMetodologias.SingleOrDefaultAsync(m => m.idMetodología == id);
+            MomentosMetodologia = await _context.MomentosMetodologia
+                .Include(m => m.Metodologia)
+                .Include(m => m.PlantillaMetodologia).SingleOrDefaultAsync(m => m.Id == id);
 
-            if (MomentosMetodologias == null)
+            if (MomentosMetodologia == null)
             {
                 return NotFound();
             }
@@ -44,11 +46,11 @@ namespace TecualaBaby.Pages.MomentoMetodologia
                 return NotFound();
             }
 
-            MomentosMetodologias = await _context.MomentosMetodologias.FindAsync(id);
+            MomentosMetodologia = await _context.MomentosMetodologia.FindAsync(id);
 
-            if (MomentosMetodologias != null)
+            if (MomentosMetodologia != null)
             {
-                _context.MomentosMetodologias.Remove(MomentosMetodologias);
+                _context.MomentosMetodologia.Remove(MomentosMetodologia);
                 await _context.SaveChangesAsync();
             }
 

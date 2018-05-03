@@ -20,11 +20,13 @@ namespace TecualaBaby.Pages.MomentoMetodologia
 
         public IActionResult OnGet()
         {
+        ViewData["MetodologiaId"] = new SelectList(_context.Metodologias, "Id", "Descripcion");
+        ViewData["PlantillaMetodologiaId"] = new SelectList(_context.PlantillaMetodologias, "Id", "Descripcion");
             return Page();
         }
 
         [BindProperty]
-        public MomentosMetodologias MomentosMetodologias { get; set; }
+        public MomentosMetodologia MomentosMetodologia { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -33,7 +35,7 @@ namespace TecualaBaby.Pages.MomentoMetodologia
                 return Page();
             }
 
-            _context.MomentosMetodologias.Add(MomentosMetodologias);
+            _context.MomentosMetodologia.Add(MomentosMetodologia);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

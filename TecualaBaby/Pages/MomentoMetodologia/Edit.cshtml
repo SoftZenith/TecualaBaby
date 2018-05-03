@@ -7,32 +7,37 @@
 
 <h2>Edit</h2>
 
-<h4>MomentosMetodologias</h4>
+<h4>MomentosMetodologia</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="MomentosMetodologias.idMetodología" />
+            <input type="hidden" asp-for="MomentosMetodologia.Id" />
             <div class="form-group">
-                <label asp-for="MomentosMetodologias.idPlantilla" class="control-label"></label>
-                <input asp-for="MomentosMetodologias.idPlantilla" class="form-control" />
-                <span asp-validation-for="MomentosMetodologias.idPlantilla" class="text-danger"></span>
+                <label asp-for="MomentosMetodologia.Descripcion" class="control-label"></label>
+                <input asp-for="MomentosMetodologia.Descripcion" class="form-control" />
+                <span asp-validation-for="MomentosMetodologia.Descripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="MomentosMetodologias.descripcion" class="control-label"></label>
-                <input asp-for="MomentosMetodologias.descripcion" class="form-control" />
-                <span asp-validation-for="MomentosMetodologias.descripcion" class="text-danger"></span>
+                <label asp-for="MomentosMetodologia.Objetivo" class="control-label"></label>
+                <input asp-for="MomentosMetodologia.Objetivo" class="form-control" />
+                <span asp-validation-for="MomentosMetodologia.Objetivo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="MomentosMetodologias.objetivo" class="control-label"></label>
-                <input asp-for="MomentosMetodologias.objetivo" class="form-control" />
-                <span asp-validation-for="MomentosMetodologias.objetivo" class="text-danger"></span>
+                <label asp-for="MomentosMetodologia.Secuencia" class="control-label"></label>
+                <input asp-for="MomentosMetodologia.Secuencia" class="form-control" />
+                <span asp-validation-for="MomentosMetodologia.Secuencia" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="MomentosMetodologias.secuencia" class="control-label"></label>
-                <input asp-for="MomentosMetodologias.secuencia" class="form-control" />
-                <span asp-validation-for="MomentosMetodologias.secuencia" class="text-danger"></span>
+                <label asp-for="MomentosMetodologia.MetodologiaId" class="control-label"></label>
+                <select asp-for="MomentosMetodologia.MetodologiaId" class="form-control" asp-items="ViewBag.MetodologiaId"></select>
+                <span asp-validation-for="MomentosMetodologia.MetodologiaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MomentosMetodologia.PlantillaMetodologiaId" class="control-label"></label>
+                <select asp-for="MomentosMetodologia.PlantillaMetodologiaId" class="form-control" asp-items="ViewBag.PlantillaMetodologiaId"></select>
+                <span asp-validation-for="MomentosMetodologia.PlantillaMetodologiaId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />

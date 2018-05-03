@@ -20,6 +20,7 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
 
         public IActionResult OnGet()
         {
+        ViewData["MetodologiaId"] = new SelectList(_context.Metodologias, "Id", "Descripcion");
             return Page();
         }
 

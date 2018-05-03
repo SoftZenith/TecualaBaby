@@ -12,12 +12,6 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.PlantillaMetodologia.IdMetodologia)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.PlantillaMetodologia.IdMetodologia)
-        </dd>
-        <dt>
             @Html.DisplayNameFor(model => model.PlantillaMetodologia.Descripcion)
         </dt>
         <dd>
@@ -34,6 +28,12 @@
         </dt>
         <dd>
             @Html.DisplayFor(model => model.PlantillaMetodologia.VersionActual)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PlantillaMetodologia.Metodologia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PlantillaMetodologia.Metodologia.Descripcion)
         </dd>
     </dl>
 </div>

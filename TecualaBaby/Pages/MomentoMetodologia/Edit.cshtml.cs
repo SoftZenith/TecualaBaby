@@ -20,7 +20,7 @@ namespace TecualaBaby.Pages.MomentoMetodologia
         }
 
         [BindProperty]
-        public MomentosMetodologias MomentosMetodologias { get; set; }
+        public MomentosMetodologia MomentosMetodologia { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,12 +29,16 @@ namespace TecualaBaby.Pages.MomentoMetodologia
                 return NotFound();
             }
 
-            MomentosMetodologias = await _context.MomentosMetodologias.SingleOrDefaultAsync(m => m.idMetodología == id);
+            MomentosMetodologia = await _context.MomentosMetodologia
+                .Include(m => m.Metodologia)
+                .Include(m => m.PlantillaMetodologia).SingleOrDefaultAsync(m => m.Id == id);
 
-            if (MomentosMetodologias == null)
+            if (MomentosMetodologia == null)
             {
                 return NotFound();
             }
+           ViewData["MetodologiaId"] = new SelectList(_context.Metodologias, "Id", "Descripcion");
+           ViewData["PlantillaMetodologiaId"] = new SelectList(_context.PlantillaMetodologias, "Id", "Descripcion");
             return Page();
         }
 
@@ -45,7 +49,7 @@ namespace TecualaBaby.Pages.MomentoMetodologia
                 return Page();
             }
 
-            _context.Attach(MomentosMetodologias).State = EntityState.Modified;
+            _context.Attach(MomentosMetodologia).State = EntityState.Modified;
 
             try
             {
@@ -53,7 +57,7 @@ namespace TecualaBaby.Pages.MomentoMetodologia
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MomentosMetodologiasExists(MomentosMetodologias.idMetodología))
+                if (!MomentosMetodologiaExists(MomentosMetodologia.Id))
                 {
                     return NotFound();
                 }
@@ -66,9 +70,9 @@ namespace TecualaBaby.Pages.MomentoMetodologia
             return RedirectToPage("./Index");
         }
 
-        private bool MomentosMetodologiasExists(int id)
+        private bool MomentosMetodologiaExists(int id)
         {
-            return _context.MomentosMetodologias.Any(e => e.idMetodología == id);
+            return _context.MomentosMetodologia.Any(e => e.Id == id);
         }
     }
 }

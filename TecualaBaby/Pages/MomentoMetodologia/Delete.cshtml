@@ -9,37 +9,43 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>MomentosMetodologias</h4>
+    <h4>MomentosMetodologia</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.MomentosMetodologias.idPlantilla)
+            @Html.DisplayNameFor(model => model.MomentosMetodologia.Descripcion)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.MomentosMetodologias.idPlantilla)
+            @Html.DisplayFor(model => model.MomentosMetodologia.Descripcion)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.MomentosMetodologias.descripcion)
+            @Html.DisplayNameFor(model => model.MomentosMetodologia.Objetivo)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.MomentosMetodologias.descripcion)
+            @Html.DisplayFor(model => model.MomentosMetodologia.Objetivo)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.MomentosMetodologias.objetivo)
+            @Html.DisplayNameFor(model => model.MomentosMetodologia.Secuencia)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.MomentosMetodologias.objetivo)
+            @Html.DisplayFor(model => model.MomentosMetodologia.Secuencia)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.MomentosMetodologias.secuencia)
+            @Html.DisplayNameFor(model => model.MomentosMetodologia.Metodologia)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.MomentosMetodologias.secuencia)
+            @Html.DisplayFor(model => model.MomentosMetodologia.Metodologia.Descripcion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MomentosMetodologia.PlantillaMetodologia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MomentosMetodologia.PlantillaMetodologia.Descripcion)
         </dd>
     </dl>
     
     <form method="post">
-        <input type="hidden" asp-for="MomentosMetodologias.idMetodología" />
+        <input type="hidden" asp-for="MomentosMetodologia.Id" />
         <input type="submit" value="Delete" class="btn btn-default" /> |
         <a asp-page="./Index">Back to List</a>
     </form>
