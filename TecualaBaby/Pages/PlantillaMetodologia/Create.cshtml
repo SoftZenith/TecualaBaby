@@ -5,9 +5,9 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
+<h2>Crear</h2>
 
-<h4>PlantillaMetodologia</h4>
+<h4>Plantilla Metodologia</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -15,18 +15,18 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="PlantillaMetodologia.Descripcion" class="control-label"></label>
-                <input asp-for="PlantillaMetodologia.Descripcion" class="form-control" />
+                <input asp-for="PlantillaMetodologia.Descripcion" class="form-control" data-val-required="Ingrese la Descripcion"/>
                 <span asp-validation-for="PlantillaMetodologia.Descripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="PlantillaMetodologia.FechaRegistro" class="control-label"></label>
-                <input asp-for="PlantillaMetodologia.FechaRegistro" class="form-control" />
+                <input asp-for="PlantillaMetodologia.FechaRegistro" class="form-control" data-val-required="Ingrese la Fecha"/>
                 <span asp-validation-for="PlantillaMetodologia.FechaRegistro" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <div class="checkbox">
                     <label>
-                        <input asp-for="PlantillaMetodologia.VersionActual" /> @Html.DisplayNameFor(model => model.PlantillaMetodologia.VersionActual))
+                        <input asp-for="PlantillaMetodologia.VersionActual" /> @Html.DisplayNameFor(model => model.PlantillaMetodologia.VersionActual)
                     </label>
                 </div>
             </div>
@@ -35,14 +35,14 @@
                 <select asp-for="PlantillaMetodologia.MetodologiaId" class ="form-control" asp-items="ViewBag.MetodologiaId"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="Index">Regresar</a>
 </div>
 
 @section Scripts {

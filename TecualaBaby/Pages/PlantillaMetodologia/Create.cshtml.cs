@@ -33,7 +33,7 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
             {
                 return Page();
             }
-
+           
             _context.PlantillaMetodologias.Add(PlantillaMetodologia);
             await _context.SaveChangesAsync();
 

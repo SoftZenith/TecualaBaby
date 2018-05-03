@@ -4,7 +4,8 @@
 var content = new Vue({
     el: '#content',
     data: {
-        imageLink: '~/images/orgullosa.jpg'
+        imageLink: '~/images/orgullosa.jpg',
+        Hola:'juan'
     }
 });
 

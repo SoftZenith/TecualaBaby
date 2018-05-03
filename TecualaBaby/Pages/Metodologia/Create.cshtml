@@ -5,7 +5,7 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
+<h2>Crear una</h2>
 
 <h4>Metodologia</h4>
 <hr />
@@ -15,28 +15,28 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Metodologia.Clave" class="control-label"></label>
-                <input asp-for="Metodologia.Clave" class="form-control" />
+                <input asp-for="Metodologia.Clave" class="form-control" data-val-required="Ingrese la clave, solo numeros"/>
                 <span asp-validation-for="Metodologia.Clave" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Metodologia.Descripcion" class="control-label"></label>
-                <input asp-for="Metodologia.Descripcion" class="form-control" />
+                <input asp-for="Metodologia.Descripcion" class="form-control" data-val-required="Ingrese la Descripcion"/>
                 <span asp-validation-for="Metodologia.Descripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Metodologia.Explicacion" class="control-label"></label>
-                <input asp-for="Metodologia.Explicacion" class="form-control" />
+                <input asp-for="Metodologia.Explicacion" class="form-control" data-val-required="Ingrese la Explicacion" />
                 <span asp-validation-for="Metodologia.Explicacion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Crear" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="Index">Regresar</a>
 </div>
 
 @section Scripts {
