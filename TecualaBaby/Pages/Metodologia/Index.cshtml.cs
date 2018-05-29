@@ -18,11 +18,11 @@ namespace TecualaBaby.Pages.Metodologia
             _context = context;
         }
 
-        public IList<TecualaBaby.Models.Metodologia> Metodologia { get;set; }
+        public IList<eva_cat_metodologias> eva_cat_metodologias { get;set; }
 
         public async Task OnGetAsync()
         {
-            Metodologia = await _context.Metodologias.ToListAsync();
+            eva_cat_metodologias = await _context.eva_cat_metodologias.ToListAsync();
         }
     }
 }

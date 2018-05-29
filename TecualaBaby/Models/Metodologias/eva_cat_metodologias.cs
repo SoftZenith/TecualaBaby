@@ -7,22 +7,22 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TecualaBaby.Models
 {
-    public class Metodologia
+    public class eva_cat_metodologias
     {
        
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int IdMetodologia { get; set; }
 
         [Required,Display(Name = "Clave")]
-        public int Clave { get; set; }
+        public string Clave { get; set; }
 
         [Required,Display(Name = "Descripcion")]
-        public string Descripcion { get; set; }
+        public string DesMetodologia { get; set; }
 
         [Required,Display(Name = "Explicacion")]
         public string Explicacion { get; set; }
 
-        public List<PlantillaMetodologia> PlantillaMetodologias { get; set; }
-        public List<MomentosMetodologia> MomentosMetodologias { get; set; }
+        public List<eva_plantilla_metodologia> PlantillaMetodologia{ get; set; }
+//        public List<MomentosMetodologia> MomentosMetodologias { get; set; }
     }
 }

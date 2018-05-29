@@ -5,42 +5,42 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Lista de Metodologias</h2>
+<h2>Index</h2>
 
 <p>
-    <a asp-page="Create">Crear una Nueva Metodologia</a>
+    <a asp-page="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Metodologia[0].Clave)
+                    @Html.DisplayNameFor(model => model.eva_cat_metodologias[0].Clave)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Metodologia[0].Descripcion)
+                    @Html.DisplayNameFor(model => model.eva_cat_metodologias[0].DesMetodologia)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Metodologia[0].Explicacion)
+                    @Html.DisplayNameFor(model => model.eva_cat_metodologias[0].Explicacion)
                 </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Metodologia) {
+@foreach (var item in Model.eva_cat_metodologias) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Clave)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
+                @Html.DisplayFor(modelItem => item.DesMetodologia)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Explicacion)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Detalles</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Eliminar</a>
+                <a asp-page="./Edit" asp-route-id="@item.IdMetodologia">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdMetodologia">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdMetodologia">Delete</a>
             </td>
         </tr>
 }

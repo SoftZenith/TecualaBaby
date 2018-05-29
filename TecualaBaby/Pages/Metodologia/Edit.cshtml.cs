@@ -20,7 +20,7 @@ namespace TecualaBaby.Pages.Metodologia
         }
 
         [BindProperty]
-        public TecualaBaby.Models.Metodologia Metodologia { get; set; }
+        public eva_cat_metodologias eva_cat_metodologias { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,9 +29,9 @@ namespace TecualaBaby.Pages.Metodologia
                 return NotFound();
             }
 
-            Metodologia = await _context.Metodologias.SingleOrDefaultAsync(m => m.Id == id);
+            eva_cat_metodologias = await _context.eva_cat_metodologias.SingleOrDefaultAsync(m => m.IdMetodologia == id);
 
-            if (Metodologia == null)
+            if (eva_cat_metodologias == null)
             {
                 return NotFound();
             }
@@ -45,7 +45,7 @@ namespace TecualaBaby.Pages.Metodologia
                 return Page();
             }
 
-            _context.Attach(Metodologia).State = EntityState.Modified;
+            _context.Attach(eva_cat_metodologias).State = EntityState.Modified;
 
             try
             {
@@ -53,7 +53,7 @@ namespace TecualaBaby.Pages.Metodologia
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MetodologiaExists(Metodologia.Id))
+                if (!eva_cat_metodologiasExists(eva_cat_metodologias.IdMetodologia))
                 {
                     return NotFound();
                 }
@@ -66,9 +66,9 @@ namespace TecualaBaby.Pages.Metodologia
             return RedirectToPage("./Index");
         }
 
-        private bool MetodologiaExists(int id)
+        private bool eva_cat_metodologiasExists(int id)
         {
-            return _context.Metodologias.Any(e => e.Id == id);
+            return _context.eva_cat_metodologias.Any(e => e.IdMetodologia == id);
         }
     }
 }

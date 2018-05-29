@@ -5,39 +5,39 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Detalles</h2>
+<h2>Details</h2>
 
 <div>
-    <h4>Plantilla Metodologia</h4>
+    <h4>eva_plantilla_metodologia</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.PlantillaMetodologia.Descripcion)
+            @Html.DisplayNameFor(model => model.eva_plantilla_metodologia.DesPlantillaMetodo)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.PlantillaMetodologia.Descripcion)
+            @Html.DisplayFor(model => model.eva_plantilla_metodologia.DesPlantillaMetodo)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.PlantillaMetodologia.FechaRegistro)
+            @Html.DisplayNameFor(model => model.eva_plantilla_metodologia.FechaReg)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.PlantillaMetodologia.FechaRegistro)
+            @Html.DisplayFor(model => model.eva_plantilla_metodologia.FechaReg)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.PlantillaMetodologia.VersionActual)
+            @Html.DisplayNameFor(model => model.eva_plantilla_metodologia.VersionActual)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.PlantillaMetodologia.VersionActual)
+            @Html.DisplayFor(model => model.eva_plantilla_metodologia.VersionActual)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.PlantillaMetodologia.Metodologia)
+            @Html.DisplayNameFor(model => model.eva_plantilla_metodologia.Metodologia)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.PlantillaMetodologia.Metodologia.Descripcion)
+            @Html.DisplayFor(model => model.eva_plantilla_metodologia.Metodologia.DesMetodologia)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.PlantillaMetodologia.Id">Editar</a> |
-    <a asp-page="./Index">Regresar</a>
+    <a asp-page="./Edit" asp-route-id="@Model.eva_plantilla_metodologia.IdPlantillaMetodologia">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
 </div>

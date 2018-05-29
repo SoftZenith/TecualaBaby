@@ -20,7 +20,7 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
         }
 
         [BindProperty]
-        public TecualaBaby.Models.PlantillaMetodologia PlantillaMetodologia { get; set; }
+        public eva_plantilla_metodologia eva_plantilla_metodologia { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,14 +29,14 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
                 return NotFound();
             }
 
-            PlantillaMetodologia = await _context.PlantillaMetodologias
-                .Include(p => p.Metodologia).SingleOrDefaultAsync(m => m.Id == id);
+            eva_plantilla_metodologia = await _context.eva_plantilla_metodologia
+                .Include(e => e.Metodologia).SingleOrDefaultAsync(m => m.IdPlantillaMetodo == id);
 
-            if (PlantillaMetodologia == null)
+            if (eva_plantilla_metodologia == null)
             {
                 return NotFound();
             }
-           ViewData["MetodologiaId"] = new SelectList(_context.Metodologias, "Id", "Descripcion");
+           ViewData["IdMetodologia"] = new SelectList(_context.eva_cat_metodologias, "IdMetodologia", "DesMetodologia");
             return Page();
         }
 
@@ -47,7 +47,7 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
                 return Page();
             }
 
-            _context.Attach(PlantillaMetodologia).State = EntityState.Modified;
+            _context.Attach(eva_plantilla_metodologia).State = EntityState.Modified;
 
             try
             {
@@ -55,7 +55,7 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PlantillaMetodologiaExists(PlantillaMetodologia.Id))
+                if (!eva_plantilla_metodologiaExists(eva_plantilla_metodologia.IdPlantillaMetodo))
                 {
                     return NotFound();
                 }
@@ -68,9 +68,9 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
             return RedirectToPage("./Index");
         }
 
-        private bool PlantillaMetodologiaExists(int id)
+        private bool eva_plantilla_metodologiaExists(int id)
         {
-            return _context.PlantillaMetodologias.Any(e => e.Id == id);
+            return _context.eva_plantilla_metodologia.Any(e => e.IdPlantillaMetodo == id);
         }
     }
 }

@@ -15,32 +15,32 @@ namespace TecualaBaby.Models
 
         }
 
-        public DbSet<Metodologia> Metodologias { get; set; }
-        public DbSet<PlantillaMetodologia> PlantillaMetodologias { set; get; }
-        public DbSet<TecualaBaby.Models.MomentosMetodologia> MomentosMetodologia { get; set; }
+        public DbSet<eva_cat_metodologias> eva_cat_metodologias { get; set; }
+        public DbSet<eva_plantilla_metodologia> eva_plantilla_metodologia { set; get; }
+        public DbSet<eva_plantilla_momentos_metodologia> eva_plantilla_momentos_metodologia { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Plantilla Metodologia
-            modelBuilder.Entity<PlantillaMetodologia>()
+            modelBuilder.Entity<eva_plantilla_metodologia>()
                 .HasOne(e => e.Metodologia)
-                .WithMany(b => b.PlantillaMetodologias)
-                .HasForeignKey(p => p.MetodologiaId)
+                .WithMany(b => b.PlantillaMetodologia)
+                .HasForeignKey(p => p.IdMetodologia)
                 .HasConstraintName("ForeignKey_PlantillaMetodologia_Metodologia");
 
             //Momentos Metodologias
-            modelBuilder.Entity<MomentosMetodologia>()
-                .HasOne(e => e.Metodologia)
-                .WithMany(b => b.MomentosMetodologias)
-                .HasForeignKey(p => p.MetodologiaId)
-                .HasConstraintName("ForeignKey_MomentosMetodologia_Metodologia");
-
-            modelBuilder.Entity<MomentosMetodologia>()
+            modelBuilder.Entity<eva_plantilla_momentos_metodologia>()
                 .HasOne(e => e.PlantillaMetodologia)
                 .WithMany(b => b.MomentosMetodologias)
-                .HasForeignKey(p => p.PlantillaMetodologiaId)
+                .HasForeignKey(p => p.IdPlantillaMetodo)
                 .HasConstraintName("ForeignKey_MomentosMetodologia_PlantillaMetodologia");
 
+            /*modelBuilder.Entity<eva_plantilla_momentos_metodologia>()
+                .HasOne(e => e.Metodologia)
+                .WithMany(b => b.)
+                .HasForeignKey(p => p.PlantillaMetodologiaId)
+                .HasConstraintName("ForeignKey_MomentosMetodologia_PlantillaMetodologia");
+              */  
         }
     
     }

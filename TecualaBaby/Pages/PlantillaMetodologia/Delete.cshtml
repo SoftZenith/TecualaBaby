@@ -5,42 +5,42 @@
     ViewData["Title"] = "Delete";
 }
 
-<h2>Eliminar</h2>
+<h2>Delete</h2>
 
-<h3>¿Esta seguro de que desea Eliminar esta plantilla?</h3>
+<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Plantilla Metodologia</h4>
+    <h4>eva_plantilla_metodologia</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.PlantillaMetodologia.Descripcion)
+            @Html.DisplayNameFor(model => model.eva_plantilla_metodologia.DesPlantillaMetodo)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.PlantillaMetodologia.Descripcion)
+            @Html.DisplayFor(model => model.eva_plantilla_metodologia.DesPlantillaMetodo)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.PlantillaMetodologia.FechaRegistro)
+            @Html.DisplayNameFor(model => model.eva_plantilla_metodologia.FechaReg)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.PlantillaMetodologia.FechaRegistro)
+            @Html.DisplayFor(model => model.eva_plantilla_metodologia.FechaReg)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.PlantillaMetodologia.VersionActual)
+            @Html.DisplayNameFor(model => model.eva_plantilla_metodologia.VersionActual)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.PlantillaMetodologia.VersionActual)
+            @Html.DisplayFor(model => model.eva_plantilla_metodologia.VersionActual)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.PlantillaMetodologia.Metodologia)
+            @Html.DisplayNameFor(model => model.eva_plantilla_metodologia.Metodologia)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.PlantillaMetodologia.Metodologia.Descripcion)
+            @Html.DisplayFor(model => model.eva_plantilla_metodologia.Metodologia.DesMetodologia)
         </dd>
     </dl>
     
     <form method="post">
-        <input type="hidden" asp-for="PlantillaMetodologia.Id" />
-        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-        <a asp-page="./Index">Regresar</a>
+        <input type="hidden" asp-for="eva_plantilla_metodologia.IdPlantillaMetodologia" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
     </form>
 </div>

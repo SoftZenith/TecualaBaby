@@ -5,48 +5,48 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Catalogo de Plantillas de una Metodologia</h2>
+<h2>Index</h2>
 
 <p>
-    <a asp-page="Create">Crear una nueva plantilla</a>
+    <a asp-page="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.PlantillaMetodologia[0].Descripcion)
+                    @Html.DisplayNameFor(model => model.eva_plantilla_metodologia[0].DesPlantillaMetodo)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.PlantillaMetodologia[0].FechaRegistro)
+                    @Html.DisplayNameFor(model => model.eva_plantilla_metodologia[0].FechaReg)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.PlantillaMetodologia[0].VersionActual)
+                    @Html.DisplayNameFor(model => model.eva_plantilla_metodologia[0].VersionActual)
                 </th>
             <th>
-                @Html.DisplayNameFor(model => model.PlantillaMetodologia[0].Metodologia)
+                @Html.DisplayNameFor(model => model.eva_plantilla_metodologia[0].Metodologia)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.PlantillaMetodologia) {
+@foreach (var item in Model.eva_plantilla_metodologia) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
+                @Html.DisplayFor(modelItem => item.DesPlantillaMetodo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FechaRegistro)
+                @Html.DisplayFor(modelItem => item.FechaReg)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.VersionActual)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Metodologia.Descripcion)
+                @Html.DisplayFor(modelItem => item.Metodologia.DesMetodologia)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Detalles</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Eliminar</a>
+                <a asp-page="./Edit" asp-route-id="@item.IdPlantillaMetodo">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdPlantillaMetodo">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdPlantillaMetodo">Delete</a>
             </td>
         </tr>
 }

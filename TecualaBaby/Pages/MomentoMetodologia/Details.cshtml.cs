@@ -18,7 +18,7 @@ namespace TecualaBaby.Pages.MomentoMetodologia
             _context = context;
         }
 
-        public MomentosMetodologia MomentosMetodologia { get; set; }
+        public eva_plantilla_momentos_metodologia eva_plantilla_momentos_metodologia { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,11 +27,11 @@ namespace TecualaBaby.Pages.MomentoMetodologia
                 return NotFound();
             }
 
-            MomentosMetodologia = await _context.MomentosMetodologia
-                .Include(m => m.Metodologia)
-                .Include(m => m.PlantillaMetodologia).SingleOrDefaultAsync(m => m.Id == id);
+            eva_plantilla_momentos_metodologia = await _context.eva_plantilla_momentos_metodologia
+                .Include(e => e.Metodologia)
+                .Include(e => e.PlantillaMetodologia).SingleOrDefaultAsync(m => m.IdMomento == id);
 
-            if (MomentosMetodologia == null)
+            if (eva_plantilla_momentos_metodologia == null)
             {
                 return NotFound();
             }

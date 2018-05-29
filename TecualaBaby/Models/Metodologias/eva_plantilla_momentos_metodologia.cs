@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace TecualaBaby.Models
 {
-    public class MomentosMetodologia
+    public class eva_plantilla_momentos_metodologia
     {
        
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int IdMomento { get; set; }
 
         [Required, Display(Name = "Descripcion")]
-        public string Descripcion { get; set; }
+        public string DesMomento { get; set; }
 
         [Required, Display(Name = "Objetivo")]
         public string Objetivo { get; set; }
@@ -22,10 +22,10 @@ namespace TecualaBaby.Models
         [Required, Display(Name = "Secuencia")]
         public int Secuencia { get; set; }
 
-        public int MetodologiaId { get; set; }
-        public Metodologia Metodologia { get; set; }
+        public int IdMetodologia { get; set; }
+        public eva_cat_metodologias Metodologia { get; set; }
 
-        public int PlantillaMetodologiaId { get; set; }
-        public PlantillaMetodologia PlantillaMetodologia { get; set; }
+        public int IdPlantillaMetodo { get; set; }
+        public eva_plantilla_metodologia PlantillaMetodologia { get; set; }
     }
 }

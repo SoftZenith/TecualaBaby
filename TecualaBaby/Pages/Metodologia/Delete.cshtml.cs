@@ -19,7 +19,7 @@ namespace TecualaBaby.Pages.Metodologia
         }
 
         [BindProperty]
-        public TecualaBaby.Models.Metodologia Metodologia { get; set; }
+        public eva_cat_metodologias eva_cat_metodologias { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,9 +28,9 @@ namespace TecualaBaby.Pages.Metodologia
                 return NotFound();
             }
 
-            Metodologia = await _context.Metodologias.SingleOrDefaultAsync(m => m.Id == id);
+            eva_cat_metodologias = await _context.eva_cat_metodologias.SingleOrDefaultAsync(m => m.IdMetodologia == id);
 
-            if (Metodologia == null)
+            if (eva_cat_metodologias == null)
             {
                 return NotFound();
             }
@@ -44,11 +44,11 @@ namespace TecualaBaby.Pages.Metodologia
                 return NotFound();
             }
 
-            Metodologia = await _context.Metodologias.FindAsync(id);
+            eva_cat_metodologias = await _context.eva_cat_metodologias.FindAsync(id);
 
-            if (Metodologia != null)
+            if (eva_cat_metodologias != null)
             {
-                _context.Metodologias.Remove(Metodologia);
+                _context.eva_cat_metodologias.Remove(eva_cat_metodologias);
                 await _context.SaveChangesAsync();
             }
 
