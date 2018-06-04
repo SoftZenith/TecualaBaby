@@ -1,0 +1,78 @@
+﻿@page
+@model TecualaBaby.Pages.CompetePotenciaEstatus.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Catalogo Compete Potencia Estatus</h2>
+
+<p>
+    <a asp-page="Create">Crear Una Compete Potencia Estatus</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_compete_potencia_estatus[0].IdTipoEstatus)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_compete_potencia_estatus[0].IdEstatus)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_compete_potencia_estatus[0].FechaEstatus)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_compete_potencia_estatus[0].Actual)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_compete_potencia_estatus[0].Observacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_compete_potencia_estatus[0].IdUsuarioReg)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eva_compete_potencia_estatus[0].Competencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eva_compete_potencia_estatus[0].CompetenciasPersona)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.eva_compete_potencia_estatus) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTipoEstatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEstatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaEstatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actual)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdUsuarioReg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Competencia.IdCompetencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompetenciasPersona.Justificacion)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.IdEstatusDet">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdEstatusDet">Detalles</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdEstatusDet">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

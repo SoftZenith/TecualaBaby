@@ -1,0 +1,62 @@
+﻿@page
+@model TecualaBaby.Pages.EvaluaOportunidades.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editar Oportunidad</h2>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="eva_evalua_oportunidades.IdOportunidad" />
+            <div class="form-group">
+                <label asp-for="eva_evalua_oportunidades.IdGenCalificacion" class="control-label"></label>
+                <select asp-for="eva_evalua_oportunidades.IdGenCalificacion" class="form-control" asp-items="ViewBag.IdGenCalificacion"></select>
+                <span asp-validation-for="eva_evalua_oportunidades.IdGenCalificacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eva_evalua_oportunidades.Calificacion" class="control-label"></label>
+                <input asp-for="eva_evalua_oportunidades.Calificacion" data-val-required="Ingrese la Calificacion" class="form-control" />
+                <span asp-validation-for="eva_evalua_oportunidades.Calificacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eva_evalua_oportunidades.IdGenOportunidad" class="control-label"></label>
+                <select asp-for="eva_evalua_oportunidades.IdGenOportunidad" class="form-control" asp-items="ViewBag.IdGenOportunidad"></select>
+                <span asp-validation-for="eva_evalua_oportunidades.IdGenOportunidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eva_evalua_oportunidades.FechaEvaluacion" class="control-label"></label>
+                <input asp-for="eva_evalua_oportunidades.FechaEvaluacion" data-val-required="Ingrese La Fecha de Evaluacion" class="form-control" />
+                <span asp-validation-for="eva_evalua_oportunidades.FechaEvaluacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eva_evalua_oportunidades.IdMetodologia" class="control-label"></label>
+                <select asp-for="eva_evalua_oportunidades.IdMetodologia" class="form-control" asp-items="ViewBag.IdMetodologia"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="eva_evalua_oportunidades.IdCompetencia" class="control-label"></label>
+                <select asp-for="eva_evalua_oportunidades.IdCompetencia" class="form-control" asp-items="ViewBag.IdCompetencia"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="eva_evalua_oportunidades.IdPersona" class="control-label"></label>
+                <select asp-for="eva_evalua_oportunidades.IdPersona" class="form-control" asp-items="ViewBag.IdPersona"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

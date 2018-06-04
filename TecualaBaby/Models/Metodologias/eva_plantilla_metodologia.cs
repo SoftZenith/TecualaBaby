@@ -20,7 +20,7 @@ namespace TecualaBaby.Models
         public DateTime FechaReg { get; set; }
 
         [Required, Display(Name = "Version Actual")]
-        public string VersionActual { get; set; }
+        public bool VersionActual { get; set; }
 
         public int IdMetodologia { get; set; }
         public eva_cat_metodologias Metodologia { get; set; }

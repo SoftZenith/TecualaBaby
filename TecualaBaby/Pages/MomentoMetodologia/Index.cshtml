@@ -5,10 +5,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Catalogo Plantilla Momentos Metodologia</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Crear una Nueva Plantilla Momento Metodologia</a>
 </p>
 <table class="table">
     <thead>
@@ -44,15 +44,15 @@
                 @Html.DisplayFor(modelItem => item.Secuencia)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Metodologia.DesMetodologia)
+                @Html.DisplayFor(modelItem => item.Metodologia.Clave)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PlantillaMetodologia.DesPlantillaMetodo)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.IdMomento">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.IdMomento">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.IdMomento">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.IdMomento">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdMomento">Detalles</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdMomento">Eliminar</a>
             </td>
         </tr>
 }

@@ -1,0 +1,84 @@
+﻿@page
+@model TecualaBaby.Pages.ControlCompetenciasActividades.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Catalogo Control Competencias Actividades</h2>
+
+<p>
+    <a asp-page="Create">Crear Nuevo Control Competencias Actividades</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_control_competencias_actividades[0].Tema)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_control_competencias_actividades[0].DesActividad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_control_competencias_actividades[0].SugeridaPor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_control_competencias_actividades[0].EligioAlumno)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_control_competencias_actividades[0].IdActividadSugerida)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eva_control_competencias_actividades[0].Actividad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eva_control_competencias_actividades[0].Competencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eva_control_competencias_actividades[0].CompetenciasPersona)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eva_control_competencias_actividades[0].Oportunidades)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.eva_control_competencias_actividades) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tema)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DesActividad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SugeridaPor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EligioAlumno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdActividadSugerida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actividad.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Competencia.IdCompetencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompetenciasPersona.Justificacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Oportunidades.FechaEvaluacion)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.IdActividad">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdActividad">Detalles</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdActividad">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

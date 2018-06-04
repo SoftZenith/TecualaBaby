@@ -25,7 +25,7 @@ namespace TecualaBaby
         {
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("tecualaBabyDB")));
-           // options.UseInMemoryDatabase("tecualaDB"));
+           //options.UseInMemoryDatabase("tecualaDB"));
             services.AddMvc();
         }
 

@@ -5,13 +5,18 @@
     ViewData["Title"] = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar Plantilla Metodologia</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Estas Seguro que deseas Eliminar esta Plantilla Metodologia?</h3>
 <div>
-    <h4>eva_plantilla_metodologia</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_plantilla_metodologia.IdPlantillaMetodo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_plantilla_metodologia.IdPlantillaMetodo)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.eva_plantilla_metodologia.DesPlantillaMetodo)
         </dt>
@@ -34,13 +39,13 @@
             @Html.DisplayNameFor(model => model.eva_plantilla_metodologia.Metodologia)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.eva_plantilla_metodologia.Metodologia.DesMetodologia)
+            @Html.DisplayFor(model => model.eva_plantilla_metodologia.Metodologia.Clave)
         </dd>
     </dl>
     
     <form method="post">
-        <input type="hidden" asp-for="eva_plantilla_metodologia.IdPlantillaMetodologia" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-page="./Index">Back to List</a>
+        <input type="hidden" asp-for="eva_plantilla_metodologia.IdPlantillaMetodo" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-page="./Index">Regresar</a>
     </form>
 </div>

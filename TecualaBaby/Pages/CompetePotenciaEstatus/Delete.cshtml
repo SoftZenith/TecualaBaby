@@ -1,0 +1,75 @@
+﻿@page
+@model TecualaBaby.Pages.CompetePotenciaEstatus.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar Compete Potencia Estatus</h2>
+
+<h3>¿Estas Seguro que deseas Elminar Esta Compete Potencia Estatus?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_compete_potencia_estatus.IdEstatusDet)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_compete_potencia_estatus.IdEstatusDet)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_compete_potencia_estatus.IdTipoEstatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_compete_potencia_estatus.IdTipoEstatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_compete_potencia_estatus.IdEstatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_compete_potencia_estatus.IdEstatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_compete_potencia_estatus.FechaEstatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_compete_potencia_estatus.FechaEstatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_compete_potencia_estatus.Actual)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_compete_potencia_estatus.Actual)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_compete_potencia_estatus.Observacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_compete_potencia_estatus.Observacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_compete_potencia_estatus.IdUsuarioReg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_compete_potencia_estatus.IdUsuarioReg)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_compete_potencia_estatus.Competencia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_compete_potencia_estatus.Competencia.IdCompetencia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_compete_potencia_estatus.CompetenciasPersona)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_compete_potencia_estatus.CompetenciasPersona.Justificacion)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="eva_compete_potencia_estatus.IdEstatusDet" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-page="./Index">Regresar</a>
+    </form>
+</div>

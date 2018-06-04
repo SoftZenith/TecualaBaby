@@ -1,0 +1,78 @@
+﻿@page
+@model TecualaBaby.Pages.ControlCompetenciasActividades.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalles Control Competencias Actividades</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_control_competencias_actividades.IdActividad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_control_competencias_actividades.IdActividad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_control_competencias_actividades.Tema)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_control_competencias_actividades.Tema)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_control_competencias_actividades.DesActividad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_control_competencias_actividades.DesActividad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_control_competencias_actividades.SugeridaPor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_control_competencias_actividades.SugeridaPor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_control_competencias_actividades.EligioAlumno)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_control_competencias_actividades.EligioAlumno)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_control_competencias_actividades.IdActividadSugerida)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_control_competencias_actividades.IdActividadSugerida)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_control_competencias_actividades.Actividad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_control_competencias_actividades.Actividad.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_control_competencias_actividades.Competencia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_control_competencias_actividades.Competencia.IdCompetencia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_control_competencias_actividades.CompetenciasPersona)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_control_competencias_actividades.CompetenciasPersona.Justificacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_control_competencias_actividades.Oportunidades)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_control_competencias_actividades.Oportunidades.FechaEvaluacion)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.eva_control_competencias_actividades.IdActividad">Editar</a> |
+    <a asp-page="./Index">Regresar</a>
+</div>

@@ -36,7 +36,7 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
             {
                 return NotFound();
             }
-           ViewData["IdMetodologia"] = new SelectList(_context.eva_cat_metodologias, "IdMetodologia", "DesMetodologia");
+           ViewData["IdMetodologia"] = new SelectList(_context.eva_cat_metodologias, "IdMetodologia", "Clave");
             return Page();
         }
 
@@ -47,7 +47,20 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
                 return Page();
             }
 
+
             _context.Attach(eva_plantilla_metodologia).State = EntityState.Modified;
+            eva_plantilla_metodologia.FechaReg = DateTime.Now;
+
+            if (eva_plantilla_metodologia.VersionActual)
+            {
+                (from p in _context.eva_plantilla_metodologia
+                 where p.IdMetodologia == eva_plantilla_metodologia.IdMetodologia
+                 && p.IdPlantillaMetodo != eva_plantilla_metodologia.IdPlantillaMetodo
+                 select p).ToList().ForEach(x => x.VersionActual = false);
+                _context.SaveChanges();
+            }
+
+
 
             try
             {
@@ -64,7 +77,7 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
                     throw;
                 }
             }
-
+           
             return RedirectToPage("./Index");
         }
 

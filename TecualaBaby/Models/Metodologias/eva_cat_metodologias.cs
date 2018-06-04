@@ -22,7 +22,8 @@ namespace TecualaBaby.Models
         [Required,Display(Name = "Explicacion")]
         public string Explicacion { get; set; }
 
-        public List<eva_plantilla_metodologia> PlantillaMetodologia{ get; set; }
-//        public List<MomentosMetodologia> MomentosMetodologias { get; set; }
+        public List<eva_plantilla_metodologia> PlantillaMetodologia { get; set; }
+        public List<eva_plantilla_momentos_metodologia> MomentosMetodologias { get; set; }
+        public List<eva_evalua_oportunidades> Oportunidades { get; set; }
     }
 }

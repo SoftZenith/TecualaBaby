@@ -5,29 +5,25 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Editar Plantilla Metodologia</h2>
 
-<h4>eva_plantilla_metodologia</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="eva_plantilla_metodologia.IdPlantillaMetodologia" />
+            <input type="hidden" asp-for="eva_plantilla_metodologia.IdPlantillaMetodo" />
             <div class="form-group">
                 <label asp-for="eva_plantilla_metodologia.DesPlantillaMetodo" class="control-label"></label>
-                <input asp-for="eva_plantilla_metodologia.DesPlantillaMetodo" class="form-control" />
+                <input asp-for="eva_plantilla_metodologia.DesPlantillaMetodo" data-val-required="Ingrese la Descripcion" class="form-control" />
                 <span asp-validation-for="eva_plantilla_metodologia.DesPlantillaMetodo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="eva_plantilla_metodologia.FechaReg" class="control-label"></label>
-                <input asp-for="eva_plantilla_metodologia.FechaReg" class="form-control" />
-                <span asp-validation-for="eva_plantilla_metodologia.FechaReg" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="eva_plantilla_metodologia.VersionActual" class="control-label"></label>
-                <input asp-for="eva_plantilla_metodologia.VersionActual" class="form-control" />
-                <span asp-validation-for="eva_plantilla_metodologia.VersionActual" class="text-danger"></span>
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="eva_plantilla_metodologia.VersionActual" /> @Html.DisplayNameFor(model => model.eva_plantilla_metodologia.VersionActual)
+                    </label>
+                </div>
             </div>
             <div class="form-group">
                 <label asp-for="eva_plantilla_metodologia.IdMetodologia" class="control-label"></label>
@@ -35,14 +31,14 @@
                 <span asp-validation-for="eva_plantilla_metodologia.IdMetodologia" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Index">Regresar</a>
 </div>
 
 @section Scripts {

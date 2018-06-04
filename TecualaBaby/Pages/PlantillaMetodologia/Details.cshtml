@@ -5,12 +5,17 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalles Plantilla Metodologia</h2>
 
 <div>
-    <h4>eva_plantilla_metodologia</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_plantilla_metodologia.IdPlantillaMetodo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_plantilla_metodologia.IdPlantillaMetodo)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.eva_plantilla_metodologia.DesPlantillaMetodo)
         </dt>
@@ -33,11 +38,11 @@
             @Html.DisplayNameFor(model => model.eva_plantilla_metodologia.Metodologia)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.eva_plantilla_metodologia.Metodologia.DesMetodologia)
+            @Html.DisplayFor(model => model.eva_plantilla_metodologia.Metodologia.Clave)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.eva_plantilla_metodologia.IdPlantillaMetodologia">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.eva_plantilla_metodologia.IdPlantillaMetodo">Editar</a> |
+    <a asp-page="./Index">Regresar</a>
 </div>

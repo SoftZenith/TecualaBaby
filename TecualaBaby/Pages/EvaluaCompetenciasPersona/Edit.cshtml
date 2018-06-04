@@ -1,0 +1,63 @@
+﻿@page
+@model TecualaBaby.Pages.EvaluaCompetenciasPersona.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editar Competencia Persona</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="eva_evalua_competencias_persona.IdPersona" />
+            <div class="form-group">
+                <label asp-for="eva_evalua_competencias_persona.IdEmpSuc" class="control-label"></label>
+                <input asp-for="eva_evalua_competencias_persona.IdEmpSuc" data-val-required="Ingrese el numero de Empleado" class="form-control" />
+                <span asp-validation-for="eva_evalua_competencias_persona.IdEmpSuc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eva_evalua_competencias_persona.IdAsignatura" class="control-label"></label>
+                <input asp-for="eva_evalua_competencias_persona.IdAsignatura" data-val-required="Ingrese el numero de Asignatura" class="form-control" />
+                <span asp-validation-for="eva_evalua_competencias_persona.IdAsignatura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eva_evalua_competencias_persona.IdGenOrigenCompe" class="control-label"></label>
+                <select asp-for="eva_evalua_competencias_persona.IdGenOrigenCompe" class="form-control" asp-items="ViewBag.IdGenOrigenCompe"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="eva_evalua_competencias_persona.FechaLimite" class="control-label"></label>
+                <input asp-for="eva_evalua_competencias_persona.FechaLimite" data-val-required="Ingrese la Fecha Limite" class="form-control" />
+                <span asp-validation-for="eva_evalua_competencias_persona.FechaLimite" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eva_evalua_competencias_persona.Justificacion" class="control-label"></label>
+                <textarea asp-for="eva_evalua_competencias_persona.Justificacion" data-val-required="Ingrese la justificacion" class="form-control" ></textarea>
+                <span asp-validation-for="eva_evalua_competencias_persona.Justificacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eva_evalua_competencias_persona.IdCompetencia" class="control-label"></label>
+                <input asp-for="eva_evalua_competencias_persona.IdCompetencia" class="form-control" />
+                <span asp-validation-for="eva_evalua_competencias_persona.IdCompetencia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eva_evalua_competencias_persona.IdTipoCompetencia" class="control-label"></label>
+                <select asp-for="eva_evalua_competencias_persona.IdTipoCompetencia" class="form-control" asp-items="ViewBag.IdTipoCompetencia"></select>
+                <span asp-validation-for="eva_evalua_competencias_persona.IdTipoCompetencia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Regresar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

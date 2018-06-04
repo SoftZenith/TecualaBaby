@@ -1,0 +1,84 @@
+﻿@page
+@model TecualaBaby.Pages.EvaluaCompetenciasPersona.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Catalogo Competencias Personas</h2>
+
+<p>
+    <a asp-page="Create">Crear Nueva Competencia Persona</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona[0].IdEmpSuc)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona[0].IdAsignatura)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona[0].IdTipoGenOrigenCompe)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona[0].IdGenOrigenCompe)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona[0].FechaReg)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona[0].FechaLimite)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona[0].Justificacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona[0].IdCompetencia)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona[0].Competencia)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.eva_evalua_competencias_persona) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEmpSuc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdAsignatura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTipoGenOrigenCompe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdGenOrigenCompe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaReg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaLimite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Justificacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCompetencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Competencia.IdCompetencia)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.IdPersona">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdPersona">Detalles</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdPersona">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

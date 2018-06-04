@@ -5,9 +5,8 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Editar Metodologia</h2>
 
-<h4>eva_cat_metodologias</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -16,28 +15,28 @@
             <input type="hidden" asp-for="eva_cat_metodologias.IdMetodologia" />
             <div class="form-group">
                 <label asp-for="eva_cat_metodologias.Clave" class="control-label"></label>
-                <input asp-for="eva_cat_metodologias.Clave" class="form-control" />
+                <input asp-for="eva_cat_metodologias.Clave" data-val-required="Ingrese la Clave" class="form-control" />
                 <span asp-validation-for="eva_cat_metodologias.Clave" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="eva_cat_metodologias.DesMetodologia" class="control-label"></label>
-                <input asp-for="eva_cat_metodologias.DesMetodologia" class="form-control" />
+                <input asp-for="eva_cat_metodologias.DesMetodologia" data-val-required="Ingrese la Descripcion" class="form-control" />
                 <span asp-validation-for="eva_cat_metodologias.DesMetodologia" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="eva_cat_metodologias.Explicacion" class="control-label"></label>
-                <input asp-for="eva_cat_metodologias.Explicacion" class="form-control" />
+                <textarea rows="8" asp-for="eva_cat_metodologias.Explicacion" data-val-required="Ingrese la Explicacion" class="form-control"></textarea>
                 <span asp-validation-for="eva_cat_metodologias.Explicacion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Index">Regresar</a>
 </div>
 
 @section Scripts {
