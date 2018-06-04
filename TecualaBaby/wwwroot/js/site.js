@@ -1,7 +1,12 @@
 ﻿// Write your Javascript code.
+//const Vue = require('Vue');
+
 var content = new Vue({
     el: '#content',
     data: {
-        imageLink: 'http://somedomain/someimage.jpg'
+        imageLink: '~/images/orgullosa.jpg',
+        Hola:'juan'
     }
 });
+
+console.log("Hola");

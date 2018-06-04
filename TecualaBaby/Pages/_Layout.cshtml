@@ -58,7 +58,23 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a asp-page="/CompetenciaPotencias/Index">Competencias Potencias</a></li>
+                            <li><a asp-page="/EvaluaCompetenciasPersona/Index">Competencias Persona</a></li>
+                            <li><a asp-page="/CompetePotenciaEstatus/Index">Compete Potencia Estatus</a></li>
+                            <li><a asp-page="/EvaluaOportunidades/Index">Oportunidades</a></li>
+                            <li><a asp-page="/EvaluaCompetenciasResponsables/Index">Competencias Responsables</a></li>
+                            <li><a asp-page="/EvaluaConocimientosOportunidad/Index">Conocimiento Oportunidad</a></li>
+                            <li><a asp-page="/ControlCompetenciasActividades/Index">Control Competencias Actividades</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Catalogos
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-page="/Actividad/Index">Actividad</a></li>
+                            <li><a asp-page="/Competencia/Index">Competencia</a></li>
+                            <li><a asp-page="/Conocimiento/Index">Conocimiento</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -102,6 +118,7 @@
                                 </div>
                             </li>
                         </ul>
+                        </ul>
             </div>
         </div>
     </nav>
@@ -131,6 +148,7 @@
                 crossorigin="anonymous"
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
 

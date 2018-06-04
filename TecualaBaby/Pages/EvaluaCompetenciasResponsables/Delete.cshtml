@@ -1,0 +1,57 @@
+﻿@page
+@model TecualaBaby.Pages.EvaluaCompetenciasResponsables.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar Competencias Responsables</h2>
+
+<h3>¿Esta Seguro que Deseas Eliminar Esta Competencia Responsables?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_responsables.IdResponsable)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_responsables.IdResponsable)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_responsables.IdTipoGenResponsable)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_responsables.IdTipoGenResponsable)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_responsables.IdGenResponsable)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_responsables.IdGenResponsable)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_responsables.Competencia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_responsables.Competencia.IdCompetencia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_responsables.CompetenciasPersona)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_responsables.CompetenciasPersona.Justificacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_responsables.Oportunidades)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_responsables.Oportunidades.FechaEvaluacion)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="eva_evalua_competencias_responsables.IdResponsable" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-page="./Index">Regresar</a>
+    </form>
+</div>

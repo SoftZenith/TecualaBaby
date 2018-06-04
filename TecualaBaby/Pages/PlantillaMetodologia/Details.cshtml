@@ -5,39 +5,44 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalles Plantilla Metodologia</h2>
 
 <div>
-    <h4>PlantillaMetodologia</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.PlantillaMetodologia.IdMetodologia)
+            @Html.DisplayNameFor(model => model.eva_plantilla_metodologia.IdPlantillaMetodo)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.PlantillaMetodologia.IdMetodologia)
+            @Html.DisplayFor(model => model.eva_plantilla_metodologia.IdPlantillaMetodo)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.PlantillaMetodologia.Descripcion)
+            @Html.DisplayNameFor(model => model.eva_plantilla_metodologia.DesPlantillaMetodo)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.PlantillaMetodologia.Descripcion)
+            @Html.DisplayFor(model => model.eva_plantilla_metodologia.DesPlantillaMetodo)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.PlantillaMetodologia.FechaRegistro)
+            @Html.DisplayNameFor(model => model.eva_plantilla_metodologia.FechaReg)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.PlantillaMetodologia.FechaRegistro)
+            @Html.DisplayFor(model => model.eva_plantilla_metodologia.FechaReg)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.PlantillaMetodologia.VersionActual)
+            @Html.DisplayNameFor(model => model.eva_plantilla_metodologia.VersionActual)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.PlantillaMetodologia.VersionActual)
+            @Html.DisplayFor(model => model.eva_plantilla_metodologia.VersionActual)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_plantilla_metodologia.Metodologia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_plantilla_metodologia.Metodologia.Clave)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.PlantillaMetodologia.Id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.eva_plantilla_metodologia.IdPlantillaMetodo">Editar</a> |
+    <a asp-page="./Index">Regresar</a>
 </div>

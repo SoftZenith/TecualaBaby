@@ -1,0 +1,78 @@
+﻿@page
+@model TecualaBaby.Pages.EvaluaCompetenciasPersona.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalles Competencia Persona</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona.IdPersona)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_persona.IdPersona)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona.IdEmpSuc)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_persona.IdEmpSuc)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona.IdAsignatura)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_persona.IdAsignatura)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona.IdTipoGenOrigenCompe)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_persona.IdTipoGenOrigenCompe)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona.IdGenOrigenCompe)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_persona.IdGenOrigenCompe)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona.FechaReg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_persona.FechaReg)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona.FechaLimite)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_persona.FechaLimite)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona.Justificacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_persona.Justificacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona.IdCompetencia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_persona.IdCompetencia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona.Competencia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_persona.Competencia.IdCompetencia)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.eva_evalua_competencias_persona.IdPersona">Editar</a> |
+    <a asp-page="./Index">Regresar</a>
+</div>

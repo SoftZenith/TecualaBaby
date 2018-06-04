@@ -24,7 +24,7 @@ namespace TecualaBaby.Pages.Metodologia
         }
 
         [BindProperty]
-        public TecualaBaby.Models.Metodologia Metodologia { get; set; }
+        public eva_cat_metodologias eva_cat_metodologias { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -33,7 +33,7 @@ namespace TecualaBaby.Pages.Metodologia
                 return Page();
             }
 
-            _context.Metodologias.Add(Metodologia);
+            _context.eva_cat_metodologias.Add(eva_cat_metodologias);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

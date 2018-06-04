@@ -5,39 +5,50 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalles Plantilla Momentos Metodologia</h2>
 
 <div>
-    <h4>MomentosMetodologias</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.MomentosMetodologias.idPlantilla)
+            @Html.DisplayNameFor(model => model.eva_plantilla_momentos_metodologia.IdMomento)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.MomentosMetodologias.idPlantilla)
+            @Html.DisplayFor(model => model.eva_plantilla_momentos_metodologia.IdMomento)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.MomentosMetodologias.descripcion)
+            @Html.DisplayNameFor(model => model.eva_plantilla_momentos_metodologia.DesMomento)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.MomentosMetodologias.descripcion)
+            @Html.DisplayFor(model => model.eva_plantilla_momentos_metodologia.DesMomento)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.MomentosMetodologias.objetivo)
+            @Html.DisplayNameFor(model => model.eva_plantilla_momentos_metodologia.Objetivo)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.MomentosMetodologias.objetivo)
+            @Html.DisplayFor(model => model.eva_plantilla_momentos_metodologia.Objetivo)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.MomentosMetodologias.secuencia)
+            @Html.DisplayNameFor(model => model.eva_plantilla_momentos_metodologia.Secuencia)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.MomentosMetodologias.secuencia)
+            @Html.DisplayFor(model => model.eva_plantilla_momentos_metodologia.Secuencia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_plantilla_momentos_metodologia.Metodologia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_plantilla_momentos_metodologia.Metodologia.Clave)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_plantilla_momentos_metodologia.PlantillaMetodologia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_plantilla_momentos_metodologia.PlantillaMetodologia.DesPlantillaMetodo)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.MomentosMetodologias.idMetodología">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.eva_plantilla_momentos_metodologia.IdMomento">Editar</a> |
+    <a asp-page="./Index">Regresar</a>
 </div>

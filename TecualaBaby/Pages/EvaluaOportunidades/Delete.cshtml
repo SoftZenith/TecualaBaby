@@ -1,0 +1,87 @@
+﻿@page
+@model TecualaBaby.Pages.EvaluaOportunidades.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar Oportunidad</h2>
+
+<h3>¿Esta Seguro que desea Eliminar Esta Oportunidad?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.IdOportunidad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.IdOportunidad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.IdTipoGenCalificacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.IdTipoGenCalificacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.IdGenCalificacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.IdGenCalificacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.Calificacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.Calificacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.IdTipoGenOportunidad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.IdTipoGenOportunidad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.IdGenOportunidad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.IdGenOportunidad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.FechaReg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.FechaReg)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.FechaEvaluacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.FechaEvaluacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.Competencia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.Competencia.IdCompetencia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.CompetenciasPersona)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.CompetenciasPersona.Justificacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.Metodologia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.Metodologia.Clave)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="eva_evalua_oportunidades.IdOportunidad" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-page="./Index">Regresar</a>
+    </form>
+</div>

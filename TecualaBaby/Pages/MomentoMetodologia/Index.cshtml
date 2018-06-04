@@ -5,48 +5,54 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Momentos de una Metodologia</h2>
+<h2>Catalogo Plantilla Momentos Metodologia</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Crear una Nueva Plantilla Momento Metodologia</a>
 </p>
 <table class="table">
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.MomentosMetodologias[0].idPlantilla)
+                    @Html.DisplayNameFor(model => model.eva_plantilla_momentos_metodologia[0].DesMomento)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.MomentosMetodologias[0].descripcion)
+                    @Html.DisplayNameFor(model => model.eva_plantilla_momentos_metodologia[0].Objetivo)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.MomentosMetodologias[0].objetivo)
+                    @Html.DisplayNameFor(model => model.eva_plantilla_momentos_metodologia[0].Secuencia)
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.MomentosMetodologias[0].secuencia)
-                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eva_plantilla_momentos_metodologia[0].Metodologia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eva_plantilla_momentos_metodologia[0].PlantillaMetodologia)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.MomentosMetodologias) {
+@foreach (var item in Model.eva_plantilla_momentos_metodologia) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.idPlantilla)
+                @Html.DisplayFor(modelItem => item.DesMomento)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.descripcion)
+                @Html.DisplayFor(modelItem => item.Objetivo)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.objetivo)
+                @Html.DisplayFor(modelItem => item.Secuencia)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.secuencia)
+                @Html.DisplayFor(modelItem => item.Metodologia.Clave)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.idMetodología">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.idMetodología">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.idMetodología">Delete</a>
+                @Html.DisplayFor(modelItem => item.PlantillaMetodologia.DesPlantillaMetodo)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.IdMomento">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdMomento">Detalles</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdMomento">Eliminar</a>
             </td>
         </tr>
 }

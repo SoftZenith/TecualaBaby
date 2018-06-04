@@ -1,0 +1,90 @@
+﻿@page
+@model TecualaBaby.Pages.EvaluaOportunidades.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Catalogos Oportunidades</h2>
+
+<p>
+    <a asp-page="Create">Crear Una Nueva Oportunidad</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_evalua_oportunidades[0].IdTipoGenCalificacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_evalua_oportunidades[0].IdGenCalificacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_evalua_oportunidades[0].Calificacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_evalua_oportunidades[0].IdTipoGenOportunidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_evalua_oportunidades[0].IdGenOportunidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_evalua_oportunidades[0].FechaReg)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.eva_evalua_oportunidades[0].FechaEvaluacion)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eva_evalua_oportunidades[0].Competencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eva_evalua_oportunidades[0].CompetenciasPersona)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eva_evalua_oportunidades[0].Metodologia)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.eva_evalua_oportunidades) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTipoGenCalificacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdGenCalificacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Calificacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTipoGenOportunidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdGenOportunidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaReg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaEvaluacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Competencia.IdCompetencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompetenciasPersona.Justificacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Metodologia.Clave)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.IdOportunidad">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdOportunidad">Detalles</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdOportunidad">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

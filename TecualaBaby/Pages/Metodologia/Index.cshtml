@@ -5,42 +5,42 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Catalogos Metodologias</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Crear una Nueva Metodologia</a>
 </p>
 <table class="table">
     <thead>
         <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Metodologia[0].clave)
+                    @Html.DisplayNameFor(model => model.eva_cat_metodologias[0].Clave)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Metodologia[0].descripcion)
+                    @Html.DisplayNameFor(model => model.eva_cat_metodologias[0].DesMetodologia)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Metodologia[0].explicacion)
+                    @Html.DisplayNameFor(model => model.eva_cat_metodologias[0].Explicacion)
                 </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Metodologia) {
+@foreach (var item in Model.eva_cat_metodologias) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.clave)
+                @Html.DisplayFor(modelItem => item.Clave)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.descripcion)
+                @Html.DisplayFor(modelItem => item.DesMetodologia)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.explicacion)
+                @Html.DisplayFor(modelItem => item.Explicacion)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.IdMetodologia">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdMetodologia">Detalles</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdMetodologia">Eliminar</a>
             </td>
         </tr>
 }

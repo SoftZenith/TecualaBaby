@@ -20,7 +20,7 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
         }
 
         [BindProperty]
-        public TecualaBaby.Models.PlantillaMetodologia PlantillaMetodologia { get; set; }
+        public eva_plantilla_metodologia eva_plantilla_metodologia { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,12 +29,14 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
                 return NotFound();
             }
 
-            PlantillaMetodologia = await _context.PlantillaMetodologias.SingleOrDefaultAsync(m => m.Id == id);
+            eva_plantilla_metodologia = await _context.eva_plantilla_metodologia
+                .Include(e => e.Metodologia).SingleOrDefaultAsync(m => m.IdPlantillaMetodo == id);
 
-            if (PlantillaMetodologia == null)
+            if (eva_plantilla_metodologia == null)
             {
                 return NotFound();
             }
+           ViewData["IdMetodologia"] = new SelectList(_context.eva_cat_metodologias, "IdMetodologia", "Clave");
             return Page();
         }
 
@@ -45,7 +47,20 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
                 return Page();
             }
 
-            _context.Attach(PlantillaMetodologia).State = EntityState.Modified;
+
+            _context.Attach(eva_plantilla_metodologia).State = EntityState.Modified;
+            eva_plantilla_metodologia.FechaReg = DateTime.Now;
+
+            if (eva_plantilla_metodologia.VersionActual)
+            {
+                (from p in _context.eva_plantilla_metodologia
+                 where p.IdMetodologia == eva_plantilla_metodologia.IdMetodologia
+                 && p.IdPlantillaMetodo != eva_plantilla_metodologia.IdPlantillaMetodo
+                 select p).ToList().ForEach(x => x.VersionActual = false);
+                _context.SaveChanges();
+            }
+
+
 
             try
             {
@@ -53,7 +68,7 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PlantillaMetodologiaExists(PlantillaMetodologia.Id))
+                if (!eva_plantilla_metodologiaExists(eva_plantilla_metodologia.IdPlantillaMetodo))
                 {
                     return NotFound();
                 }
@@ -62,13 +77,13 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
                     throw;
                 }
             }
-
+           
             return RedirectToPage("./Index");
         }
 
-        private bool PlantillaMetodologiaExists(int id)
+        private bool eva_plantilla_metodologiaExists(int id)
         {
-            return _context.PlantillaMetodologias.Any(e => e.Id == id);
+            return _context.eva_plantilla_metodologia.Any(e => e.IdPlantillaMetodo == id);
         }
     }
 }

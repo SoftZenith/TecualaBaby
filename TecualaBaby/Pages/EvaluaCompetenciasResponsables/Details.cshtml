@@ -1,0 +1,54 @@
+﻿@page
+@model TecualaBaby.Pages.EvaluaCompetenciasResponsables.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalles Competencias Responsables</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_responsables.IdResponsable)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_responsables.IdResponsable)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_responsables.IdTipoGenResponsable)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_responsables.IdTipoGenResponsable)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_responsables.IdGenResponsable)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_responsables.IdGenResponsable)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_responsables.Competencia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_responsables.Competencia.IdCompetencia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_responsables.CompetenciasPersona)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_responsables.CompetenciasPersona.Justificacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_competencias_responsables.Oportunidades)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_competencias_responsables.Oportunidades.FechaEvaluacion)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.eva_evalua_competencias_responsables.IdResponsable">Editar</a> |
+    <a asp-page="./Index">Regresar</a>
+</div>

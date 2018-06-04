@@ -1,0 +1,84 @@
+﻿@page
+@model TecualaBaby.Pages.EvaluaOportunidades.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalles Oportunidad</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.IdOportunidad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.IdOportunidad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.IdTipoGenCalificacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.IdTipoGenCalificacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.IdGenCalificacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.IdGenCalificacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.Calificacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.Calificacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.IdTipoGenOportunidad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.IdTipoGenOportunidad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.IdGenOportunidad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.IdGenOportunidad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.FechaReg)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.FechaReg)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.FechaEvaluacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.FechaEvaluacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.Competencia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.Competencia.IdCompetencia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.CompetenciasPersona)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.CompetenciasPersona.Justificacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_evalua_oportunidades.Metodologia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_evalua_oportunidades.Metodologia.Clave)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.eva_evalua_oportunidades.IdOportunidad">Editar</a> |
+    <a asp-page="./Index">Regresar</a>
+</div>

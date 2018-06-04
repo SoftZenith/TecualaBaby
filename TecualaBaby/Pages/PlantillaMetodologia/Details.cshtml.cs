@@ -18,7 +18,7 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
             _context = context;
         }
 
-        public TecualaBaby.Models.PlantillaMetodologia PlantillaMetodologia { get; set; }
+        public eva_plantilla_metodologia eva_plantilla_metodologia { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,9 +27,10 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
                 return NotFound();
             }
 
-            PlantillaMetodologia = await _context.PlantillaMetodologias.SingleOrDefaultAsync(m => m.Id == id);
+            eva_plantilla_metodologia = await _context.eva_plantilla_metodologia
+                .Include(e => e.Metodologia).SingleOrDefaultAsync(m => m.IdPlantillaMetodo == id);
 
-            if (PlantillaMetodologia == null)
+            if (eva_plantilla_metodologia == null)
             {
                 return NotFound();
             }

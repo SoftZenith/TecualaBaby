@@ -1,0 +1,81 @@
+﻿@page
+@model TecualaBaby.Pages.ControlCompetenciasActividades.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar Control Competencias Actividades</h2>
+
+<h3>¿Esta Seguro que desea Elminar este Control Competencias Actividades?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_control_competencias_actividades.IdActividad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_control_competencias_actividades.IdActividad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_control_competencias_actividades.Tema)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_control_competencias_actividades.Tema)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_control_competencias_actividades.DesActividad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_control_competencias_actividades.DesActividad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_control_competencias_actividades.SugeridaPor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_control_competencias_actividades.SugeridaPor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_control_competencias_actividades.EligioAlumno)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_control_competencias_actividades.EligioAlumno)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_control_competencias_actividades.IdActividadSugerida)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_control_competencias_actividades.IdActividadSugerida)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_control_competencias_actividades.Actividad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_control_competencias_actividades.Actividad.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_control_competencias_actividades.Competencia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_control_competencias_actividades.Competencia.IdCompetencia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_control_competencias_actividades.CompetenciasPersona)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_control_competencias_actividades.CompetenciasPersona.Justificacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.eva_control_competencias_actividades.Oportunidades)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.eva_control_competencias_actividades.Oportunidades.FechaEvaluacion)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="eva_control_competencias_actividades.IdActividad" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-page="./Index">Regresar</a>
+    </form>
+</div>

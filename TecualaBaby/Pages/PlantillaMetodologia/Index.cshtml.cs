@@ -18,11 +18,12 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
             _context = context;
         }
 
-        public IList<TecualaBaby.Models.PlantillaMetodologia> PlantillaMetodologia { get;set; }
+        public IList<eva_plantilla_metodologia> eva_plantilla_metodologia { get;set; }
 
         public async Task OnGetAsync()
         {
-            PlantillaMetodologia = await _context.PlantillaMetodologias.ToListAsync();
+            eva_plantilla_metodologia = await _context.eva_plantilla_metodologia.OrderByDescending(x => x.VersionActual)
+                .Include(e => e.Metodologia).ToListAsync();
         }
     }
 }
