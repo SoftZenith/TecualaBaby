@@ -30,7 +30,7 @@ namespace TecualaBaby.Pages.ControlCompetenciasActividades
             }
 
             eva_control_competencias_actividades = await _context.eva_control_competencias_actividades
-                .Include(e => e.Actividad)
+                .Include(e => e.ActividadesSugeridas)
                 .Include(e => e.Competencia)
                 .Include(e => e.CompetenciasPersona)
                 .Include(e => e.Oportunidades).SingleOrDefaultAsync(m => m.IdActividad == id);
@@ -39,8 +39,8 @@ namespace TecualaBaby.Pages.ControlCompetenciasActividades
             {
                 return NotFound();
             }
-           ViewData["IdTipoActividadSug"] = new SelectList(_context.actividad, "Id", "Id");
-           ViewData["IdCompetencia"] = new SelectList(_context.competencia, "IdCompetencia", "IdCompetencia");
+           ViewData["IdTipoActividadSug"] = new SelectList(_context.eva_cat_tipo_Actividades_sugeridas, "IdTipoActividadSug", "DesTipoActividadSug");
+           ViewData["IdCompetencia"] = new SelectList(_context.eva_cat_competencias, "IdCompetencia", "DesCompetencia");
            ViewData["IdPersona"] = new SelectList(_context.eva_evalua_competencias_persona, "IdPersona", "Justificacion");
            ViewData["IdOportunidad"] = new SelectList(_context.eva_evalua_oportunidades, "IdOportunidad", "FechaEvaluacion");
             return Page();

@@ -28,7 +28,7 @@ namespace TecualaBaby.Pages.ControlCompetenciasActividades
             }
 
             eva_control_competencias_actividades = await _context.eva_control_competencias_actividades
-                .Include(e => e.Actividad)
+                .Include(e => e.ActividadesSugeridas)
                 .Include(e => e.Competencia)
                 .Include(e => e.CompetenciasPersona)
                 .Include(e => e.Oportunidades).SingleOrDefaultAsync(m => m.IdActividad == id);

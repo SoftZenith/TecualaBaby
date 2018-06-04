@@ -44,7 +44,7 @@ namespace TecualaBaby.Pages.CompetePotenciaEstatus
                 new SelectListItem{ Text="Evaluada", Value="7"},
                 new SelectListItem{ Text="Cancelada", Value="8" }
             }, "Value", "Text");
-            ViewData["IdCompetencia"] = new SelectList(_context.competencia, "IdCompetencia", "IdCompetencia");
+            ViewData["IdCompetencia"] = new SelectList(_context.eva_cat_competencias, "IdCompetencia", "DesCompetencia");
            ViewData["IdPersona"] = new SelectList(_context.eva_evalua_competencias_persona, "IdPersona", "Justificacion");
             return Page();
         }

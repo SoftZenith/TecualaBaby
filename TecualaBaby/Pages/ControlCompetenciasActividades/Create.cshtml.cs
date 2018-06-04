@@ -20,8 +20,8 @@ namespace TecualaBaby.Pages.ControlCompetenciasActividades
 
         public IActionResult OnGet()
         {
-        ViewData["IdTipoActividadSug"] = new SelectList(_context.actividad, "Id", "Id");
-        ViewData["IdCompetencia"] = new SelectList(_context.competencia, "IdCompetencia", "IdCompetencia");
+        ViewData["IdTipoActividadSug"] = new SelectList(_context.eva_cat_tipo_Actividades_sugeridas, "IdTipoActividadSug", "DesTipoActividadSug");
+        ViewData["IdCompetencia"] = new SelectList(_context.eva_cat_competencias, "IdCompetencia", "DesCompetencia");
         ViewData["IdPersona"] = new SelectList(_context.eva_evalua_competencias_persona, "IdPersona", "Justificacion");
         ViewData["IdOportunidad"] = new SelectList(_context.eva_evalua_oportunidades, "IdOportunidad", "FechaEvaluacion");
             return Page();

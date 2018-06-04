@@ -40,8 +40,10 @@ namespace TecualaBaby.Models
         
         //FK
         public int IdCompetencia { get; set; }
+        public eva_cat_competencias Competencia { get; set; }
+
         public int IdTipoCompetencia { get; set; }
-        public competencia Competencia { get; set; }
+        public eva_cat_tipo_competencias TipoCompetencias { get; set; }
 
         public List<eva_compete_potencia_estatus> CompetePotenciaEstatus { get; set; }
         public List<eva_evalua_oportunidades> Oportunidades { get; set; }

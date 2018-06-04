@@ -25,6 +25,12 @@ namespace TecualaBaby.Models
         public DbSet<eva_evalua_conocimientos_oportunidad> eva_evalua_conocimientos_oportunidad { get; set; }
         public DbSet<eva_evalua_oportunidades> eva_evalua_oportunidades { get; set; }
 
+        public DbSet<eva_cat_actividades_sugeridas> eva_cat_actividades_sugeridas { get; set; }
+        public DbSet<eva_cat_competencias> eva_cat_competencias { get; set; }
+        public DbSet<eva_cat_conocimientos> eva_cat_conocimientos { get; set; }
+        public DbSet<eva_cat_tipo_actividades_sugeridas> eva_cat_tipo_Actividades_sugeridas { get; set; }
+        public DbSet<eva_cat_tipo_competencias> eva_cat_tipo_competencias { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Plantilla Metodologia
@@ -55,10 +61,10 @@ namespace TecualaBaby.Models
               .HasConstraintName("ForeignKey_CompetenciasPersona_Competencia");
 
             modelBuilder.Entity<eva_evalua_competencias_persona>()
-              .HasOne(e => e.Competencia)
+              .HasOne(e => e.TipoCompetencias)
               .WithMany(b => b.CompetenciasPersonas)
               .HasForeignKey(p => p.IdTipoCompetencia)
-              .HasConstraintName("ForeignKey_CompetenciasPersona_Competencia");
+              .HasConstraintName("ForeignKey_CompetenciasPersona_TipoCompetencia");
 
             //Compete Potencia Estatus
             modelBuilder.Entity<eva_compete_potencia_estatus>()
@@ -125,7 +131,7 @@ namespace TecualaBaby.Models
               .HasConstraintName("ForeignKey_ConocimientosOportunidad_CompetenciasPersona");
 
             modelBuilder.Entity<eva_evalua_conocimientos_oportunidad>()
-             .HasOne(e => e.Competencia)
+             .HasOne(e => e.TipoCompetencias)
              .WithMany(b => b.ConocimientosOportunidad)
              .HasForeignKey(p => p.IdTipoCompetencia)
              .HasConstraintName("ForeignKey_ConocimientoOportunidad_Competencia");
@@ -162,24 +168,18 @@ namespace TecualaBaby.Models
               .HasConstraintName("ForeignKey_ControlCompetenciasActividades_Oportunidades");
 
             modelBuilder.Entity<eva_control_competencias_actividades>()
-             .HasOne(e => e.Actividad)
-             .WithMany(b => b.ControlCompetenciasActividades)
+             .HasOne(e => e.ActividadesSugeridas)
+             .WithMany(b => b.CompetenciasActividades)
              .HasForeignKey(p => p.IdActividadSugerida)
              .HasConstraintName("ForeignKey_ControlCompetenciasActividades_Actividad");
 
             modelBuilder.Entity<eva_control_competencias_actividades>()
-             .HasOne(e => e.Actividad)
-             .WithMany(b => b.ControlCompetenciasActividades)
+             .HasOne(e => e.TipoActividadesSugeridas)
+             .WithMany(b => b.CompetenciasActividades)
              .HasForeignKey(p => p.IdTipoActividadSug)
-             .HasConstraintName("ForeignKey_ControlCompetenciasActividades_Actividad");
+             .HasConstraintName("ForeignKey_ControlCompetenciasActividades_TipoActividad");
 
         }
-
-        public DbSet<TecualaBaby.Models.actividad> actividad { get; set; }
-
-        public DbSet<TecualaBaby.Models.competencia> competencia { get; set; }
-
-        public DbSet<TecualaBaby.Models.conocimiento> conocimiento { get; set; }
 
     }
 }

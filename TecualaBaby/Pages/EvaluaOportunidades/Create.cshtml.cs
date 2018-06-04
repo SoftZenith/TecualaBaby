@@ -38,7 +38,7 @@ namespace TecualaBaby.Pages.EvaluaOportunidades
                 new SelectListItem{ Text="Especial", Value="7"}
             }, "Value", "Text");
 
-            ViewData["IdCompetencia"] = new SelectList(_context.competencia, "IdCompetencia", "IdCompetencia");
+            ViewData["IdCompetencia"] = new SelectList(_context.eva_cat_competencias, "IdCompetencia", "IdDesCompetencia");
         ViewData["IdPersona"] = new SelectList(_context.eva_evalua_competencias_persona, "IdPersona", "Justificacion");
         ViewData["IdMetodologia"] = new SelectList(_context.eva_cat_metodologias, "IdMetodologia", "Clave");
             return Page();

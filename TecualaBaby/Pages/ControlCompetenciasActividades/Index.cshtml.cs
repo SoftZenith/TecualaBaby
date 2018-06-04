@@ -23,7 +23,7 @@ namespace TecualaBaby.Pages.ControlCompetenciasActividades
         public async Task OnGetAsync()
         {
             eva_control_competencias_actividades = await _context.eva_control_competencias_actividades
-                .Include(e => e.Actividad)
+                .Include(e => e.ActividadesSugeridas)
                 .Include(e => e.Competencia)
                 .Include(e => e.CompetenciasPersona)
                 .Include(e => e.Oportunidades).ToListAsync();

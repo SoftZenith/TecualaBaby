@@ -26,9 +26,9 @@ namespace TecualaBaby.Pages.EvaluaConocimientosOportunidad
                 new SelectListItem{ Text="Suficiente", Value="2"},
                 new SelectListItem{ Text="No Alcanzada", Value="3" }
             }, "Value", "Text");
-            ViewData["IdTipoCompetencia"] = new SelectList(_context.competencia, "IdCompetencia", "IdCompetencia");
+            ViewData["IdTipoCompetencia"] = new SelectList(_context.eva_cat_tipo_competencias, "IdTipoCompetencia", "DesTipoCompetencia");
         ViewData["IdPersona"] = new SelectList(_context.eva_evalua_competencias_persona, "IdPersona", "Justificacion");
-        ViewData["IdConocimiento"] = new SelectList(_context.conocimiento, "IdConocimiento", "IdConocimiento");
+        ViewData["IdConocimiento"] = new SelectList(_context.eva_cat_conocimientos, "IdConocimiento", "DesConocimiento");
         ViewData["IdOportunidad"] = new SelectList(_context.eva_evalua_oportunidades, "IdOportunidad", "FechaEvaluacion");
             return Page();
         }

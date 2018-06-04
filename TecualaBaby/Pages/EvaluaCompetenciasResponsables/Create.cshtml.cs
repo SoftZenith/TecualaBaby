@@ -29,7 +29,7 @@ namespace TecualaBaby.Pages.EvaluaCompetenciasResponsables
                 new SelectListItem{ Text="Tutor", Value="5"},
                 new SelectListItem{ Text="Evaluador", Value="6" }
             }, "Value", "Text");
-            ViewData["IdCompetencia"] = new SelectList(_context.competencia, "IdCompetencia", "IdCompetencia");
+            ViewData["IdCompetencia"] = new SelectList(_context.eva_cat_competencias, "IdCompetencia", "DesCompetencia");
         ViewData["IdPersona"] = new SelectList(_context.eva_evalua_competencias_persona, "IdPersona", "Justificacion");
         ViewData["IdOportunidad"] = new SelectList(_context.eva_evalua_oportunidades, "IdOportunidad", "FechaEvaluacion");
             return Page();

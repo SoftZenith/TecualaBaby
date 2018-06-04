@@ -39,17 +39,18 @@ namespace TecualaBaby.Models
          * x-10 doctorado
          */
         public int IdActividadSugerida { get; set; }
+        public eva_cat_actividades_sugeridas ActividadesSugeridas { get; set; }
 
         //x
         public int IdTipoActividadSug { get; set; }
-        public actividad Actividad { get; set; }
+        public eva_cat_tipo_actividades_sugeridas TipoActividadesSugeridas { get; set; }
 
         //Fk
         public int IdPersona { get; set; }
         public eva_evalua_competencias_persona CompetenciasPersona { get; set; }
 
         public int IdCompetencia { get; set; }
-        public competencia Competencia { get; set; }
+        public eva_cat_competencias Competencia { get; set; }
 
         public int IdOportunidad { get; set; }
         public eva_evalua_oportunidades Oportunidades { get; set; }

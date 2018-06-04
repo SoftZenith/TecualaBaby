@@ -28,7 +28,7 @@ namespace TecualaBaby.Pages.EvaluaCompetenciasPersona
                 new SelectListItem{ Text="ExtraCurricular", Value="3" }
             },"Value","Text");
 
-        ViewData["IdTipoCompetencia"] = new SelectList(_context.competencia, "IdCompetencia", "Nombre");
+        ViewData["IdTipoCompetencia"] = new SelectList(_context.eva_cat_tipo_competencias, "IdTipoCompetencia", "DesTipoCompetencia");
             return Page();
        
         }

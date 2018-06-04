@@ -38,7 +38,7 @@ namespace TecualaBaby.Models
         public eva_evalua_competencias_persona CompetenciasPersona { get; set; }
 
         public int IdCompetencia { get; set; }
-        public competencia Competencia { get; set; }
+        public eva_cat_competencias Competencia { get; set; }
 
     }
 }
