@@ -6,6 +6,8 @@
 }
 
 <h2>Catalogo Competencias Personas</h2>
+<h2>@Model.NombreC</h2>
+<h2>@Model.NumeroControl</h2>
 
 <p>
     <a asp-page="Create">Crear Nueva Competencia Persona</a>
@@ -13,14 +15,9 @@
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona[0].IdEmpSuc)
-                </th>
+              
                 <th>
                     @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona[0].IdAsignatura)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona[0].IdTipoGenOrigenCompe)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona[0].IdGenOrigenCompe)
@@ -38,7 +35,7 @@
                     @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona[0].IdCompetencia)
                 </th>
             <th>
-                @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona[0].Competencia)
+                @Html.DisplayNameFor(model => model.eva_evalua_competencias_persona[0].IdTipoCompetencia)
             </th>
             <th></th>
         </tr>
@@ -47,17 +44,25 @@
 @foreach (var item in Model.eva_evalua_competencias_persona) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.IdEmpSuc)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.IdAsignatura)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdTipoGenOrigenCompe)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdGenOrigenCompe)
-            </td>
+            @switch
+          (item.IdGenOrigenCompe)
+            {
+                case 1:
+                    <td>
+                        Asignatura Curricular
+                    </td> break;
+                case 2:
+                    <td>
+                        Extraordinarias
+                    </td> break;
+                case 3:
+                    <td>
+                        ExtraCurricular
+                    </td>       break;
+
+            }
             <td>
                 @Html.DisplayFor(modelItem => item.FechaReg)
             </td>
@@ -68,15 +73,17 @@
                 @Html.DisplayFor(modelItem => item.Justificacion)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdCompetencia)
+                @Html.DisplayFor(modelItem => item.Competencia.DesCompetencia)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Competencia.IdCompetencia)
+                @Html.DisplayFor(modelItem => item.IdTipoCompetencia)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.IdPersona">Editar</a> |
                 <a asp-page="./Details" asp-route-id="@item.IdPersona">Detalles</a> |
-                <a asp-page="./Delete" asp-route-id="@item.IdPersona">Eliminar</a>
+                <a asp-page="./Delete" asp-route-id="@item.IdPersona">Eliminar</a> |
+                <a asp-page="../CompetePotenciaEstatus/Index" asp-route-id="@item.IdPersona"
+                   asp-route-competencia="@item.IdCompetencia">Estatus</a>
             </td>
         </tr>
 }

@@ -43,7 +43,7 @@ namespace TecualaBaby.Pages.EvaluaCompetenciasPersona
                 new SelectListItem{ Text="Extraordinarias", Value="2"},
                 new SelectListItem{ Text="ExtraCurricular", Value="3" }
             }, "Value", "Text");
-
+            ViewData["IdCompetencia"] = new SelectList(_context.eva_cat_competencias, "IdCompetencia", "DesCompetencia");
             ViewData["IdTipoCompetencia"] = new SelectList(_context.eva_cat_tipo_competencias, "IdTipoCompetencia", "DesTipoCompetencia");
             return Page();
         }
@@ -54,10 +54,13 @@ namespace TecualaBaby.Pages.EvaluaCompetenciasPersona
             {
                 return Page();
             }
-
+            if (eva_evalua_competencias_persona.FechaLimite < DateTime.Now)
+            {
+                return Page();
+            }
             _context.Attach(eva_evalua_competencias_persona).State = EntityState.Modified;
 
-            eva_evalua_competencias_persona.IdTipoGenOrigenCompe = 70;
+            eva_evalua_competencias_persona.IdTipoGenOrigenCompe = 19;
             eva_evalua_competencias_persona.FechaReg = DateTime.Now;
             try
             {

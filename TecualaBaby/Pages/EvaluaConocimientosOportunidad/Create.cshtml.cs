@@ -43,7 +43,7 @@ namespace TecualaBaby.Pages.EvaluaConocimientosOportunidad
                 return Page();
             }
             eva_evalua_conocimientos_oportunidad.FechaReg = DateTime.Now;
-            eva_evalua_conocimientos_oportunidad.IdTipoGenCalificacion = 69;
+            eva_evalua_conocimientos_oportunidad.IdTipoGenCalificacion = 11;
             _context.eva_evalua_conocimientos_oportunidad.Add(eva_evalua_conocimientos_oportunidad);
             await _context.SaveChangesAsync();
 

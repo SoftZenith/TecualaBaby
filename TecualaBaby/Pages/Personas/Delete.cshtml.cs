@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using TecualaBaby.Models;
 
-namespace TecualaBaby.Pages.EvaluaCompetenciasPersona
+namespace TecualaBaby.Pages.Personas
 {
     public class DeleteModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace TecualaBaby.Pages.EvaluaCompetenciasPersona
         }
 
         [BindProperty]
-        public eva_evalua_competencias_persona eva_evalua_competencias_persona { get; set; }
+        public cat_personas cat_personas { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,11 +28,9 @@ namespace TecualaBaby.Pages.EvaluaCompetenciasPersona
                 return NotFound();
             }
 
-            eva_evalua_competencias_persona = await _context.eva_evalua_competencias_persona
-                .Include(e => e.Competencia).Include(x => x.TipoCompetencias).
-                SingleOrDefaultAsync(m => m.IdPersona == id);
+            cat_personas = await _context.cat_personas.SingleOrDefaultAsync(m => m.IdPersona == id);
 
-            if (eva_evalua_competencias_persona == null)
+            if (cat_personas == null)
             {
                 return NotFound();
             }
@@ -46,11 +44,11 @@ namespace TecualaBaby.Pages.EvaluaCompetenciasPersona
                 return NotFound();
             }
 
-            eva_evalua_competencias_persona = await _context.eva_evalua_competencias_persona.FindAsync(id);
+            cat_personas = await _context.cat_personas.FindAsync(id);
 
-            if (eva_evalua_competencias_persona != null)
+            if (cat_personas != null)
             {
-                _context.eva_evalua_competencias_persona.Remove(eva_evalua_competencias_persona);
+                _context.cat_personas.Remove(cat_personas);
                 await _context.SaveChangesAsync();
             }
 

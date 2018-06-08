@@ -37,12 +37,12 @@ namespace TecualaBaby.Pages.CompetePotenciaEstatus
             {
                 return NotFound();
             }
-
-           ViewData["IdEstatus"]= new SelectList(new List<SelectListItem>
+            ViewData["IdEstatus"] = new SelectList(new List<SelectListItem>
             {
                 new SelectListItem{ Text="Asignada", Value = "1"},
-                new SelectListItem{ Text="Evaluada", Value="7"},
-                new SelectListItem{ Text="Cancelada", Value="8" }
+                new SelectListItem{ Text="Evaluada", Value= "2"},
+                new SelectListItem{ Text="Cancelada", Value= "3" }
+
             }, "Value", "Text");
             ViewData["IdCompetencia"] = new SelectList(_context.eva_cat_competencias, "IdCompetencia", "DesCompetencia");
            ViewData["IdPersona"] = new SelectList(_context.eva_evalua_competencias_persona, "IdPersona", "Justificacion");
@@ -51,15 +51,16 @@ namespace TecualaBaby.Pages.CompetePotenciaEstatus
 
         public async Task<IActionResult> OnPostAsync()
         {
+      
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
             _context.Attach(eva_compete_potencia_estatus).State = EntityState.Modified;
-
-            eva_compete_potencia_estatus.IdTipoEstatus = 26;
+            eva_compete_potencia_estatus.IdTipoEstatus = 7;
             eva_compete_potencia_estatus.IdUsuarioReg = "Juan";
+            eva_compete_potencia_estatus.FechaEstatus = DateTime.Now;
             try
             {
                 await _context.SaveChangesAsync();

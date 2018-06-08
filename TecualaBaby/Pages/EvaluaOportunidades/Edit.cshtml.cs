@@ -71,8 +71,8 @@ namespace TecualaBaby.Pages.EvaluaOportunidades
             _context.Attach(eva_evalua_oportunidades).State = EntityState.Modified;
 
             eva_evalua_oportunidades.FechaReg = DateTime.Now;
-            eva_evalua_oportunidades.IdTipoGenCalificacion = 69;
-            eva_evalua_oportunidades.IdTipoGenOportunidad = 71;
+            eva_evalua_oportunidades.IdTipoGenCalificacion = 11;
+            eva_evalua_oportunidades.IdTipoGenOportunidad = 20;
             try
             {
                 await _context.SaveChangesAsync();

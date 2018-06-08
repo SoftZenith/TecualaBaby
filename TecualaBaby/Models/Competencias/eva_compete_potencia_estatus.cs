@@ -12,7 +12,7 @@ namespace TecualaBaby.Models
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdEstatusDet { get; set; }
 
-        //26
+        [Required, Display(Name = "IdTipoEstatus")]
         public int IdTipoEstatus { get; set; }
 
         /*Lista
@@ -20,10 +20,11 @@ namespace TecualaBaby.Models
          * 26 - 7 Evaluada
          * 26 - 8 Cancelada
          */
+        [Required,Display(Name = "IdEstatus")]
         public int IdEstatus { get; set; }
 
         [Required, Display(Name = "Fecha Estatus")]
-        public string FechaEstatus { get; set; }
+        public DateTime FechaEstatus { get; set; }
 
         [Required, Display(Name = "Actual")]
         public bool Actual { get; set; }
@@ -31,7 +32,7 @@ namespace TecualaBaby.Models
         [Required, Display(Name = "Observaciones")]
         public string Observacion { get; set; }
 
-        [Required, Display(Name = "Usuario Registrado")]
+       
         public string IdUsuarioReg { get; set; }
 
         public int IdPersona { get; set; }

@@ -45,7 +45,7 @@ namespace TecualaBaby.Pages.EvaluaCompetenciasResponsables
                 return Page();
             }
 
-            eva_evalua_competencias_responsables.IdTipoGenResponsable = 100;
+            eva_evalua_competencias_responsables.IdTipoGenResponsable = 16;
 
             _context.eva_evalua_competencias_responsables.Add(eva_evalua_competencias_responsables);
             await _context.SaveChangesAsync();

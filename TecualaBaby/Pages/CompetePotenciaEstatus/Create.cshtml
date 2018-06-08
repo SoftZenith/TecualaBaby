@@ -5,24 +5,22 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Crear Compete Potencia Estatus</h2>
 
+<h2>Crear Compete Potencia Estatus</h2>
+<h2>@Model.NombreC</h2>
+<h2>@Model.NumeroControl</h2>
+<h2>@Model.NCompe</h2>
+<h3>@Model.IdCompe</h3>
+<h3>@Model.IdPerso</h3>
 
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="eva_compete_potencia_estatus.IdEstatusDet" />
             <div class="form-group">
                 <label asp-for="eva_compete_potencia_estatus.IdEstatus" class="control-label"></label>
                 <select asp-for="eva_compete_potencia_estatus.IdEstatus" class="form-control" asp-items="ViewBag.IdEstatus"></select>
-                <span asp-validation-for="eva_compete_potencia_estatus.IdEstatus" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="eva_compete_potencia_estatus.FechaEstatus" class="control-label"></label>
-                <input asp-for="eva_compete_potencia_estatus.FechaEstatus" data-val-required="Ingrese la Fecha Estatus" class="form-control" />
-                <span asp-validation-for="eva_compete_potencia_estatus.FechaEstatus" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <div class="checkbox">
@@ -35,16 +33,6 @@
                 <label asp-for="eva_compete_potencia_estatus.Observacion" class="control-label"></label>
                 <textarea rows="8" asp-for="eva_compete_potencia_estatus.Observacion" data-val-required="Ingrese la Observacion" class="form-control"></textarea>
                 <span asp-validation-for="eva_compete_potencia_estatus.Observacion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="eva_compete_potencia_estatus.IdPersona" class="control-label"></label>
-                <select asp-for="eva_compete_potencia_estatus.IdPersona" class="form-control" asp-items="ViewBag.IdPersona"></select>
-                <span asp-validation-for="eva_compete_potencia_estatus.IdPersona" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="eva_compete_potencia_estatus.IdCompetencia" class="control-label"></label>
-                <select asp-for="eva_compete_potencia_estatus.IdCompetencia" class="form-control" asp-items="ViewBag.IdCompetencia"></select>
-                <span asp-validation-for="eva_compete_potencia_estatus.IdCompetencia" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Guardar" class="btn btn-primary" />

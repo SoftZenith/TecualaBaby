@@ -6,6 +6,8 @@
 }
 
 <h2>Catalogo Plantilla Momentos Metodologia</h2>
+<h2>Plantilla: @Model.idplantilla </h2>
+<h2>Metodologia: @Model.idmetodologia</h2>
 
 <p>
     <a asp-page="Create">Crear una Nueva Plantilla Momento Metodologia</a>
@@ -22,12 +24,6 @@
                 <th>
                     @Html.DisplayNameFor(model => model.eva_plantilla_momentos_metodologia[0].Secuencia)
                 </th>
-            <th>
-                @Html.DisplayNameFor(model => model.eva_plantilla_momentos_metodologia[0].Metodologia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.eva_plantilla_momentos_metodologia[0].PlantillaMetodologia)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -42,12 +38,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Secuencia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Metodologia.Clave)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlantillaMetodologia.DesPlantillaMetodo)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.IdMomento">Editar</a> |

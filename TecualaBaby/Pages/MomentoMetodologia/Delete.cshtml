@@ -6,6 +6,9 @@
 }
 
 <h2>Eliminar Plantilla Momentos Metodologia</h2>
+<h2>Plantilla: @Model.idplantilla </h2>
+<h2>Metodologia: @Model.idmetodologia</h2>
+<h2>@Model.idm @Model.idp</h2>
 
 <h3>¿Estas Seguro que Deseas Eliminar Esta Plantilla Momentos Metodologia?</h3>
 <div>
@@ -48,7 +51,7 @@
             @Html.DisplayFor(model => model.eva_plantilla_momentos_metodologia.PlantillaMetodologia.DesPlantillaMetodo)
         </dd>
     </dl>
-    
+
     <form method="post">
         <input type="hidden" asp-for="eva_plantilla_momentos_metodologia.IdMomento" />
         <input type="submit" value="Eliminar" class="btn btn-danger" /> |

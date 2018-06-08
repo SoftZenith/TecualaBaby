@@ -5,7 +5,11 @@
     ViewData["Title"] = "Create";
 }
 
+
 <h2>Crear Plantilla Momentos Metodologia</h2>
+<h2>Plantilla: @Model.idplantilla </h2>
+<h2>Metodologia: @Model.idmetodologia</h2>
+<h2>@Model.idm @Model.idp</h2>
 
 <hr />
 <div class="row">
@@ -19,21 +23,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="eva_plantilla_momentos_metodologia.Objetivo" class="control-label"></label>
-                <textarea rows="8" asp-for="eva_plantilla_momentos_metodologia.Objetivo" data-val-required="Ingrese el Objetivo" class="form-control" ></textarea>
+                <textarea rows="8" asp-for="eva_plantilla_momentos_metodologia.Objetivo" data-val-required="Ingrese el Objetivo" class="form-control"></textarea>
                 <span asp-validation-for="eva_plantilla_momentos_metodologia.Objetivo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="eva_plantilla_momentos_metodologia.Secuencia" class="control-label"></label>
-                <input asp-for="eva_plantilla_momentos_metodologia.Secuencia" data-val-required="Ingrese la secuencia" class="form-control" />
+                <input type="number" step="1" asp-for="eva_plantilla_momentos_metodologia.Secuencia" data-val-required="Ingrese la secuencia" class="form-control" />
                 <span asp-validation-for="eva_plantilla_momentos_metodologia.Secuencia" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="eva_plantilla_momentos_metodologia.IdMetodologia" class="control-label"></label>
-                <select asp-for="eva_plantilla_momentos_metodologia.IdMetodologia" class ="form-control" asp-items="ViewBag.IdMetodologia"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="eva_plantilla_momentos_metodologia.IdPlantillaMetodo" class="control-label"></label>
-                <select asp-for="eva_plantilla_momentos_metodologia.IdPlantillaMetodo" class ="form-control" asp-items="ViewBag.IdPlantillaMetodo" ></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Guardar" class="btn btn-primary" />

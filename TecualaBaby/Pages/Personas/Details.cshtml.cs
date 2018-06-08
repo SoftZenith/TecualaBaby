@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using TecualaBaby.Models;
 
-namespace TecualaBaby.Pages.MomentoMetodologia
+namespace TecualaBaby.Pages.Personas
 {
     public class DetailsModel : PageModel
     {
@@ -18,15 +18,7 @@ namespace TecualaBaby.Pages.MomentoMetodologia
             _context = context;
         }
 
-        public eva_plantilla_momentos_metodologia eva_plantilla_momentos_metodologia { get; set; }
-        [TempData]
-        public string idplantilla { get; set; }
-        [TempData]
-        public string idmetodologia { get; set; }
-        [TempData]
-        public int idp { get; set; }
-        [TempData]
-        public int idm { get; set; }
+        public cat_personas cat_personas { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -35,11 +27,9 @@ namespace TecualaBaby.Pages.MomentoMetodologia
                 return NotFound();
             }
 
-            eva_plantilla_momentos_metodologia = await _context.eva_plantilla_momentos_metodologia
-                .Include(e => e.Metodologia)
-                .Include(e => e.PlantillaMetodologia).SingleOrDefaultAsync(m => m.IdMomento == id);
+            cat_personas = await _context.cat_personas.SingleOrDefaultAsync(m => m.IdPersona == id);
 
-            if (eva_plantilla_momentos_metodologia == null)
+            if (cat_personas == null)
             {
                 return NotFound();
             }

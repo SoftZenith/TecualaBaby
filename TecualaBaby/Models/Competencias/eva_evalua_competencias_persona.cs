@@ -12,9 +12,6 @@ namespace TecualaBaby.Models
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdPersona { get; set; }
 
-        [Required, Display(Name = "Empleado Sucursal")]
-        public int IdEmpSuc { get; set; }
-
         [Required, Display(Name = "Asignatura")]
         public int IdAsignatura { get; set; }
 

@@ -61,7 +61,7 @@ namespace TecualaBaby.Pages.EvaluaConocimientosOportunidad
 
             _context.Attach(eva_evalua_conocimientos_oportunidad).State = EntityState.Modified;
             eva_evalua_conocimientos_oportunidad.FechaReg = DateTime.Now;
-            eva_evalua_conocimientos_oportunidad.IdTipoGenCalificacion = 69;
+            eva_evalua_conocimientos_oportunidad.IdTipoGenCalificacion = 11;
 
             try
             {

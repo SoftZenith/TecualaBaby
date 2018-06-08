@@ -34,13 +34,13 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
                 return Page();
             }
 
-            if (eva_plantilla_metodologia.VersionActual)
+            /*if (eva_plantilla_metodologia.VersionActual)
             {
                 (from p in _context.eva_plantilla_metodologia
                  where p.IdMetodologia == eva_plantilla_metodologia.IdMetodologia
                  select p).ToList().ForEach(x => x.VersionActual = false);
                 _context.SaveChanges();
-            }
+            }*/
 
             eva_plantilla_metodologia.FechaReg = DateTime.Now;
            

@@ -7,6 +7,8 @@
 
 <h2>Crear Una Metodologia</h2>
 
+<h3 class="text-danger">@Model.Message</h3>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -24,11 +26,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="eva_cat_metodologias.Explicacion" class="control-label"></label>
-                <textarea rows="8"  asp-for="eva_cat_metodologias.Explicacion" data-val-required="Ingrese la Explicacion" class="form-control"></textarea>
+                <textarea rows="8" asp-for="eva_cat_metodologias.Explicacion" data-val-required="Ingrese la Explicacion" class="form-control"></textarea>
                 <span asp-validation-for="eva_cat_metodologias.Explicacion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <input type="submit" value="Guardar" class="btn btn-primary" id="save"/>
             </div>
         </form>
     </div>
@@ -37,6 +39,12 @@
 <div>
     <a asp-page="Index">Regresar</a>
 </div>
+<script >
+    $("#save").click(function () {
+        alert(@Model.Message);
+    });
+</script>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

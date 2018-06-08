@@ -38,7 +38,7 @@ namespace TecualaBaby.Pages.EvaluaOportunidades
                 new SelectListItem{ Text="Especial", Value="7"}
             }, "Value", "Text");
 
-            ViewData["IdCompetencia"] = new SelectList(_context.eva_cat_competencias, "IdCompetencia", "IdDesCompetencia");
+            ViewData["IdCompetencia"] = new SelectList(_context.eva_cat_competencias, "IdCompetencia", "DesCompetencia");
         ViewData["IdPersona"] = new SelectList(_context.eva_evalua_competencias_persona, "IdPersona", "Justificacion");
         ViewData["IdMetodologia"] = new SelectList(_context.eva_cat_metodologias, "IdMetodologia", "Clave");
             return Page();
@@ -53,8 +53,8 @@ namespace TecualaBaby.Pages.EvaluaOportunidades
             {
                 return Page();
             }
-            eva_evalua_oportunidades.IdTipoGenCalificacion = 69;
-            eva_evalua_oportunidades.IdTipoGenOportunidad = 71;
+            eva_evalua_oportunidades.IdTipoGenCalificacion = 11;
+            eva_evalua_oportunidades.IdTipoGenOportunidad = 20;
             eva_evalua_oportunidades.FechaReg = DateTime.Now;
             _context.eva_evalua_oportunidades.Add(eva_evalua_oportunidades);
             await _context.SaveChangesAsync();

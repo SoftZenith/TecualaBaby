@@ -62,7 +62,7 @@ namespace TecualaBaby.Pages.EvaluaCompetenciasResponsables
 
             _context.Attach(eva_evalua_competencias_responsables).State = EntityState.Modified;
 
-            eva_evalua_competencias_responsables.IdTipoGenResponsable = 100;
+            eva_evalua_competencias_responsables.IdTipoGenResponsable = 16;
 
             try
             {

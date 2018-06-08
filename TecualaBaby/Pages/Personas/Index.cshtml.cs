@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using TecualaBaby.Models;
 
-namespace TecualaBaby.Pages.PlantillaMetodologia
+namespace TecualaBaby.Pages.Personas
 {
     public class IndexModel : PageModel
     {
@@ -18,15 +18,11 @@ namespace TecualaBaby.Pages.PlantillaMetodologia
             _context = context;
         }
 
-        public IList<eva_plantilla_metodologia> eva_plantilla_metodologia { get;set; }
+        public IList<cat_personas> cat_personas { get;set; }
 
         public async Task OnGetAsync()
         {
-            eva_plantilla_metodologia = await _context.eva_plantilla_metodologia
-                .OrderByDescending(x => x.IdMetodologia)
-                .OrderByDescending(z => z.VersionActual)
-                .OrderByDescending(y => y.FechaReg)
-                .Include(e => e.Metodologia).ToListAsync();
+            cat_personas = await _context.cat_personas.ToListAsync();
         }
     }
 }

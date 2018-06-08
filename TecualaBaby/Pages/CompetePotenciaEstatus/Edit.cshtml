@@ -7,6 +7,7 @@
 
 <h2>Editar Compete Potencia Estatus</h2>
 
+
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -19,11 +20,6 @@
                 <span asp-validation-for="eva_compete_potencia_estatus.IdEstatus" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="eva_compete_potencia_estatus.FechaEstatus" class="control-label"></label>
-                <input asp-for="eva_compete_potencia_estatus.FechaEstatus" data-val-required="Ingrese la Fecha Estatus" class="form-control" />
-                <span asp-validation-for="eva_compete_potencia_estatus.FechaEstatus" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <div class="checkbox">
                     <label>
                         <input asp-for="eva_compete_potencia_estatus.Actual" /> @Html.DisplayNameFor(model => model.eva_compete_potencia_estatus.Actual)
@@ -32,7 +28,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="eva_compete_potencia_estatus.Observacion" class="control-label"></label>
-                <textarea rows="8" asp-for="eva_compete_potencia_estatus.Observacion" data-val-required="Ingrese la Observacion" class="form-control" ></textarea>
+                <textarea rows="8" asp-for="eva_compete_potencia_estatus.Observacion" data-val-required="Ingrese la Observacion" class="form-control"></textarea>
                 <span asp-validation-for="eva_compete_potencia_estatus.Observacion" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -53,7 +49,7 @@
 </div>
 
 <div>
-    <a asp-page="./Index">Regresar</a>
+    <a asp-page="Index">Regresar</a>
 </div>
 
 @section Scripts {

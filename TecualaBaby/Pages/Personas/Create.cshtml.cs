@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using TecualaBaby.Models;
 
-namespace TecualaBaby.Pages.Metodologia
+namespace TecualaBaby.Pages.Personas
 {
     public class CreateModel : PageModel
     {
@@ -24,10 +24,7 @@ namespace TecualaBaby.Pages.Metodologia
         }
 
         [BindProperty]
-        public eva_cat_metodologias eva_cat_metodologias { get; set; }
-
-        [TempData]
-        public string Message { get; set; }
+        public cat_personas cat_personas { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -36,22 +33,10 @@ namespace TecualaBaby.Pages.Metodologia
                 return Page();
             }
 
-            if(eva_cat_metodologiasExists(eva_cat_metodologias.Clave))
-            {
-                Message = $"Error, duplicacion de Clave:  {eva_cat_metodologias.Clave} Ya existe";
-                return Page();
-            }
-
-            _context.eva_cat_metodologias.Add(eva_cat_metodologias);
+            _context.cat_personas.Add(cat_personas);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
         }
-
-        private bool eva_cat_metodologiasExists(string clave)
-        {
-            return _context.eva_cat_metodologias.Any(e => e.Clave == clave);
-        }
-
     }
 }

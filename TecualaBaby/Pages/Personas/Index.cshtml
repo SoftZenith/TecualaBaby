@@ -1,0 +1,55 @@
+﻿@page
+@model TecualaBaby.Pages.Personas.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.cat_personas[0].NumControl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.cat_personas[0].Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.cat_personas[0].ApPaterno)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.cat_personas[0].ApMaterno)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.cat_personas) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumControl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApPaterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApMaterno)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.IdPersona">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdPersona">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdPersona">Delete</a> |
+                <a asp-page="../EvaluaCompetenciasPersona/Index" asp-route-id="@item.IdPersona">Competencia Estatus</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

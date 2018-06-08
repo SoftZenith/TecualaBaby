@@ -30,6 +30,7 @@ namespace TecualaBaby.Models
         public DbSet<eva_cat_conocimientos> eva_cat_conocimientos { get; set; }
         public DbSet<eva_cat_tipo_actividades_sugeridas> eva_cat_tipo_Actividades_sugeridas { get; set; }
         public DbSet<eva_cat_tipo_competencias> eva_cat_tipo_competencias { get; set; }
+        public DbSet<cat_personas> cat_personas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

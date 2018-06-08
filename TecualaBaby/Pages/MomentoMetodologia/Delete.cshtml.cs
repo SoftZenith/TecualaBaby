@@ -20,6 +20,14 @@ namespace TecualaBaby.Pages.MomentoMetodologia
 
         [BindProperty]
         public eva_plantilla_momentos_metodologia eva_plantilla_momentos_metodologia { get; set; }
+        [TempData]
+        public string idplantilla { get; set; }
+        [TempData]
+        public string idmetodologia { get; set; }
+        [TempData]
+        public int idp { get; set; }
+        [TempData]
+        public int idm { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
